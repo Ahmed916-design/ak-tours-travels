@@ -1,16 +1,17 @@
 // app/fleet/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, MessageCircle } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import FleetCard from "@/components/FleetCard";
 import InquirySection from "@/components/InquirySection";
 import { FLEET, BUSINESS } from "@/lib/constants";
+import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Our Fleet | AC Cars for Rent in Palanpur",
+  title: "Our Fleet | Sedan, SUV & Mini Bus Rental in Palanpur",
   description:
-    "Choose from Hyundai Aura, Maruti Ertiga, Toyota Innova Crysta, Force Urbania. AC cabs with verified drivers. Book now at +91 99793 57086.",
+    "Choose from Swift Dzire, Hyundai Aura, Maruti Ertiga, Toyota Innova Crysta, and Force Urbania. AC cabs with verified drivers. Call +91 99793 57086.",
 };
 
 export default function FleetPage() {
@@ -22,7 +23,7 @@ export default function FleetPage() {
           <SectionHeading
             eyebrow="Our Fleet"
             title="Choose Your Perfect Ride"
-            subtitle="AC cars from budget to premium — all with verified, professional drivers"
+            subtitle="Sedans, SUVs, and Mini Buses — all AC with verified drivers"
           />
         </div>
       </section>
@@ -38,67 +39,77 @@ export default function FleetPage() {
         </div>
       </section>
 
-        {/* INQUIRY FORM */}
+      {/* INQUIRY FORM */}
       <InquirySection
         title="Not Sure Which Car to Pick?"
-        subtitle="Tell us your route and passengers — we'll suggest the perfect car"
-        bg="bg-white"/>
+        subtitle="Tell us your route and passengers — we'll suggest the perfect car and best rate"
+        bg="bg-gray-50"
+      />
 
-      {/* Pricing Info */}
-      <section className="section bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <SectionHeading
-            eyebrow="Pricing Rules"
-            title="Transparent Pricing — No Hidden Charges"
-          />
-          <div className="mt-10 card">
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex gap-3">
-                <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Outstation:</strong> Minimum 250 km/day
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Driver Allowance:</strong> ₹300/day
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Night Charge:</strong> ₹300 (10 PM – 6 AM)
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Toll, Parking, State Tax:</strong> Extra (actual)
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-green-600 font-bold">✓</span>
-                <span>
-                  <strong>Local Package:</strong> 8hr/80km from ₹1,800
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 mb-4">
-              Confusion? Call ya WhatsApp karo — hum sahi car suggest karenge
+      {/* Contact CTA */}
+      <section className="section bg-white">
+        <div className="container-custom max-w-3xl">
+          <div className="card text-center !p-8 md:!p-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Need Help Choosing?
+            </h2>
+            <p className="mt-3 text-gray-600">
+              Call us — we'll help you pick the right car and share the best rate for your trip.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
               <a href={`tel:${BUSINESS.phone}`} className="btn-primary">
                 <Phone className="h-5 w-5" />
-                Call Now
+                {BUSINESS.phoneDisplay}
               </a>
-              <Link href="/contact" className="btn-secondary">
-                Send Inquiry <ArrowRight className="h-4 w-4" />
-              </Link>
+              <a href={`tel:${BUSINESS.phone2}`} className="btn-primary">
+                <Phone className="h-5 w-5" />
+                {BUSINESS.phone2Display}
+              </a>
+              <a
+                href={whatsappLink("Hi, I need help choosing a car")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp"
+              >
+                <MessageCircle className="h-5 w-5" />
+                WhatsApp
+              </a>
             </div>
+
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Why Book With Us?
+              </h3>
+              <ul className="space-y-2 text-left max-w-md mx-auto text-gray-700">
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Transparent pricing — no hidden charges</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Verified, professional drivers</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Well-maintained AC cars</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Discounts on long trips & round-trips</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>24x7 support — call anytime</span>
+                </li>
+              </ul>
+            </div>
+
+            <Link
+              href="/contact#inquiry"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-green-700 hover:underline"
+            >
+              Or send an inquiry <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

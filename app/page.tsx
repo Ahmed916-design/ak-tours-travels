@@ -8,21 +8,41 @@ import {
   CheckCircle2,
   Star,
   ArrowRight,
+  Plane,
+  Train,
+  MapPin,
+  Repeat,
+  Clock,
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import FleetCard from "@/components/FleetCard";
 import RouteCard from "@/components/RouteCard";
 import InquirySection from "@/components/InquirySection";
-import { FLEET, PACKAGES, WHY_US, BUSINESS } from "@/lib/constants";
+import {
+  FLEET,
+  PACKAGES,
+  WHY_US,
+  SERVICES,
+  ALL_INDIA_DESTINATIONS,
+  BUSINESS,
+} from "@/lib/constants";
 import { ROUTES } from "@/lib/routes-data";
-import { formatPrice } from "@/lib/utils";
 
-const ICONS: Record<string, any> = {
+const WHY_ICONS: Record<string, any> = {
   ShieldCheck,
   IndianRupee,
   Car,
   Headset,
+};
+
+const SERVICE_ICONS: Record<string, any> = {
+  Car,
+  Repeat,
+  Plane,
+  Train,
+  MapPin,
+  Clock,
 };
 
 export default function HomePage() {
@@ -42,7 +62,7 @@ export default function HomePage() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {WHY_US.map((item) => {
-              const Icon = ICONS[item.icon] || Car;
+              const Icon = WHY_ICONS[item.icon] || Car;
               return (
                 <div key={item.title} className="text-center">
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
@@ -59,16 +79,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FLEET */}
+      {/* OUR SERVICES */}
       <section className="section bg-gray-50">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="Our Services"
+            title="Everything You Need for Your Journey"
+            subtitle="One way, round trip, airport, railway, and All India tours"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((service) => {
+              const Icon = SERVICE_ICONS[service.icon] || Car;
+              return (
+                <div key={service.title} className="card flex gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 shrink-0">
+                    <Icon className="h-6 w-6 text-green-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-600">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FLEET */}
+      <section className="section bg-white">
         <div className="container-custom">
           <SectionHeading
             eyebrow="Our Fleet"
             title="Choose Your Ride"
-            subtitle="AC cars from budget to premium — all with verified drivers"
+            subtitle="Sedans, SUVs, and Mini Buses — all AC with verified drivers"
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {FLEET.slice(0, 6).map((car) => (
+            {FLEET.map((car) => (
               <FleetCard key={car.id} car={car} />
             ))}
           </div>
@@ -107,8 +158,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TOUR PACKAGES */}
+      {/* ALL INDIA TOUR */}
       <section className="section bg-green-50">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="All India Tour Service"
+            title="Travel Anywhere in India"
+            subtitle="Delhi, Kashmir, Kerala, Rajasthan, Mumbai, Goa & more"
+          />
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {ALL_INDIA_DESTINATIONS.map((dest) => (
+              <div
+                key={dest}
+                className="card flex items-center gap-3 !py-4"
+              >
+                <MapPin className="h-5 w-5 text-green-600 shrink-0" />
+                <span className="font-medium text-gray-800">{dest}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TOUR PACKAGES */}
+      <section className="section bg-white">
         <div className="container-custom">
           <SectionHeading
             eyebrow="Tour Packages"
@@ -119,7 +192,7 @@ export default function HomePage() {
             {PACKAGES.map((pkg) => (
               <div key={pkg.id} className="card !p-0 overflow-hidden">
                 <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <span className="text-green-800 font-semibold">
+                  <span className="text-green-800 font-semibold text-center px-3">
                     {pkg.title}
                   </span>
                 </div>
@@ -135,11 +208,11 @@ export default function HomePage() {
                     ))}
                   </ul>
                   <div className="mt-4 flex items-center justify-between border-t pt-4">
-                    <div className="text-lg font-bold text-green-700">
-                      {formatPrice(pkg.price)}
+                    <div className="text-sm font-semibold text-green-700">
+                      Call for Best Rate
                     </div>
                     <Link
-                      href={`/packages#${pkg.id}`}
+                      href="/packages"
                       className="text-sm font-semibold text-green-700 hover:underline"
                     >
                       Details →
@@ -153,7 +226,7 @@ export default function HomePage() {
       </section>
 
       {/* REVIEWS */}
-      <section className="section bg-white">
+      <section className="section bg-gray-50">
         <div className="container-custom">
           <SectionHeading
             eyebrow="Customer Reviews"
@@ -210,6 +283,12 @@ export default function HomePage() {
               className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
             >
               📞 {BUSINESS.phoneDisplay}
+            </a>
+            <a
+              href={`tel:${BUSINESS.phone2}`}
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
+            >
+              📞 {BUSINESS.phone2Display}
             </a>
             <a
               href={`https://wa.me/${BUSINESS.whatsapp}`}

@@ -1,7 +1,6 @@
 // components/RouteCard.tsx
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
-import { formatPrice } from "@/lib/utils";
 import type { RouteData } from "@/lib/routes-data";
 
 export default function RouteCard({ route }: { route: RouteData }) {
@@ -16,12 +15,9 @@ export default function RouteCard({ route }: { route: RouteData }) {
       <h3 className="mt-2 text-lg font-bold text-gray-900 group-hover:text-green-600">
         {route.from} → {route.to}
       </h3>
-      <div className="mt-4 flex items-center justify-between">
-        <div>
-          <div className="text-xs text-gray-500">Starting from</div>
-          <div className="text-xl font-bold text-green-700">
-            {formatPrice(route.basePrice)}
-          </div>
+      <div className="mt-4 flex items-center justify-between border-t pt-4">
+        <div className="text-sm font-semibold text-green-700">
+          💰 Best Price — Call Now
         </div>
         <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition" />
       </div>

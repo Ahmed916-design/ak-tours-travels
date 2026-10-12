@@ -20,18 +20,27 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-      <div className="bg-green-700 text-white text-sm">
-        <div className="container-custom flex items-center justify-between py-2">
+       <div className="bg-green-700 text-white text-sm">
+        <div className="container-custom flex items-center justify-between py-2 gap-3">
           <span className="hidden sm:inline">
             🚕 24x7 Cab Service in Palanpur
           </span>
-          <a
-            href={`tel:${BUSINESS.phone}`}
-            className="flex items-center gap-2 hover:underline"
-          >
-            <Phone className="h-4 w-4" />
-            {BUSINESS.phoneDisplay}
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href={`tel:${BUSINESS.phone}`}
+              className="flex items-center gap-2 hover:underline"
+            >
+              <Phone className="h-4 w-4" />
+              {BUSINESS.phoneDisplay}
+            </a>
+            <a
+              href={`tel:${BUSINESS.phone2}`}
+              className="hidden md:flex items-center gap-2 hover:underline"
+            >
+              <Phone className="h-4 w-4" />
+              {BUSINESS.phone2Display}
+            </a>
+          </div>
         </div>
       </div>
 

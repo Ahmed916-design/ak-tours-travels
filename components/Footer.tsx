@@ -56,6 +56,12 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href={`tel:${BUSINESS.phone2}`} className="flex gap-2 hover:text-green-400">
+                <Phone className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
+                {BUSINESS.phone2Display}
+              </a>
+            </li>
+            <li>
               <a href={`mailto:${BUSINESS.email}`} className="flex gap-2 hover:text-green-400 break-all">
                 <Mail className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
                 {BUSINESS.email}

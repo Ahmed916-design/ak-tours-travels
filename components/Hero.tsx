@@ -11,15 +11,16 @@ export default function Hero() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800">
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              Palanpur's Trusted Cab Service
+              Welcome to A K Tour & Travels
             </span>
             <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Book Your Ride in{" "}
-              <span className="text-green-600">Palanpur</span> in 2 Minutes
+              Book Your Ride{" "}
+              <span className="text-green-600">Anywhere in India</span>{" "}
+              in 2 Minutes
             </h1>
             <p className="mt-5 text-lg text-gray-600">
-              Local, outstation, airport transfers, and tour packages.
-              Verified drivers, transparent pricing, available 24x7.
+              Professional & reliable drivers. Local, outstation, airport
+              transfers, and All India tour packages. 24x7 available.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -56,15 +57,24 @@ export default function Hero() {
 
           <div className="relative">
             <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
-              <h3 className="text-xl font-bold text-gray-900">Quick Booking</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                Quick Booking
+              </h3>
               <p className="mt-1 text-sm text-gray-500">
-                Call or WhatsApp us — confirmed in 2 minutes
+                Call or WhatsApp — confirmed in 2 minutes
               </p>
 
               <div className="mt-6 space-y-3">
                 <a href={`tel:${BUSINESS.phone}`} className="btn-primary w-full">
                   <Phone className="h-5 w-5" />
                   Call {BUSINESS.phoneDisplay}
+                </a>
+                <a
+                  href={`tel:${BUSINESS.phone2}`}
+                  className="btn-primary w-full"
+                >
+                  <Phone className="h-5 w-5" />
+                  Call {BUSINESS.phone2Display}
                 </a>
                 <a
                   href={whatsappLink(

@@ -4,12 +4,12 @@ import { CheckCircle2, Phone, MessageCircle } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import InquirySection from "@/components/InquirySection";
 import { PACKAGES, BUSINESS } from "@/lib/constants";
-import { formatPrice, whatsappLink } from "@/lib/utils";
+import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Tour Packages | Palanpur to Ambaji, Mount Abu, Dwarka",
+  title: "Tour Packages | Palanpur to Ambaji, Mount Abu, Rajasthan",
   description:
-    "Curated tour packages from Palanpur — Ambaji, Mount Abu, Dwarka-Somnath, Rann of Kutch. Car + driver + itinerary. Best rates.",
+    "Curated tour packages from Palanpur — Ambaji, Mount Abu, Dwarka-Somnath, Rajasthan. Car + driver + itinerary. Call +91 99793 57086 for best rate.",
 };
 
 export default function PackagesPage() {
@@ -28,7 +28,7 @@ export default function PackagesPage() {
       <section className="section bg-white">
         <div className="container-custom space-y-12">
           {PACKAGES.map((pkg, index) => {
-            const msg = `Hi, I want to book the "${pkg.title}" package. Please share details.`;
+            const msg = `Hi, I want to book the "${pkg.title}" package. Please share the best rate.`;
             const isEven = index % 2 === 0;
 
             return (
@@ -40,7 +40,7 @@ export default function PackagesPage() {
                 }`}
               >
                 <div className="aspect-video rounded-2xl bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-green-800">
+                  <span className="text-2xl font-bold text-green-800 text-center px-4">
                     {pkg.title}
                   </span>
                 </div>
@@ -52,12 +52,8 @@ export default function PackagesPage() {
                   <h2 className="mt-2 text-2xl md:text-3xl font-bold text-gray-900">
                     {pkg.title}
                   </h2>
-                  <div className="mt-4 text-3xl font-bold text-green-700">
-                    {formatPrice(pkg.price)}
-                    <span className="text-sm font-normal text-gray-500">
-                      {" "}
-                      onwards
-                    </span>
+                  <div className="mt-4 inline-block rounded-full bg-green-100 px-4 py-1.5 text-sm font-semibold text-green-800">
+                    💰 Custom Pricing — Call for Quote
                   </div>
 
                   <ul className="mt-6 space-y-2">
@@ -78,7 +74,14 @@ export default function PackagesPage() {
                       className="btn-primary"
                     >
                       <Phone className="h-5 w-5" />
-                      Call Now
+                      {BUSINESS.phoneDisplay}
+                    </a>
+                    <a
+                      href={`tel:${BUSINESS.phone2}`}
+                      className="btn-primary"
+                    >
+                      <Phone className="h-5 w-5" />
+                      {BUSINESS.phone2Display}
                     </a>
                     <a
                       href={whatsappLink(msg)}
@@ -97,7 +100,7 @@ export default function PackagesPage() {
         </div>
       </section>
 
-        {/* INQUIRY FORM */}
+      {/* INQUIRY FORM */}
       <InquirySection
         title="Inquire About a Tour Package"
         subtitle="Tell us your destination and dates — we'll send a custom quote on WhatsApp"
@@ -111,6 +114,7 @@ export default function PackagesPage() {
           </h2>
           <p className="mt-3 text-green-100">
             We'll design a package tailored to your family, budget, and schedule.
+            Any destination in India — Delhi, Kashmir, Kerala, Rajasthan, Goa & more.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
@@ -118,6 +122,12 @@ export default function PackagesPage() {
               className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
             >
               📞 {BUSINESS.phoneDisplay}
+            </a>
+            <a
+              href={`tel:${BUSINESS.phone2}`}
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
+            >
+              📞 {BUSINESS.phone2Display}
             </a>
             <a
               href={whatsappLink("Hi, I want a custom tour package")}

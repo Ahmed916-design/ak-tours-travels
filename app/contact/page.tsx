@@ -9,7 +9,7 @@ import { whatsappLink } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Contact Us | A K Tours and Travels Palanpur",
   description:
-    "Contact A K Tours and Travels in Palanpur. Call +91 99793 57086 or WhatsApp for instant booking. Office: Kanoder, Behind Swad Hotel, Palanpur.",
+    "Contact A K Tours and Travels in Palanpur. Call +91 99793 57086 or +91 99257 63146. Office: Kanoder, Behind Swad Hotel, Palanpur. 24x7 available.",
 };
 
 export default function ContactPage() {
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {/* Contact Cards */}
             <div className="space-y-5">
-              {/* Phone */}
+              {/* Phone 1 */}
               <a
                 href={`tel:${BUSINESS.phone}`}
                 className="card flex items-start gap-4 hover:border-green-300"
@@ -42,13 +42,34 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">
-                    Call Us
+                    Call Us (Primary)
                   </div>
                   <div className="mt-1 text-lg font-bold text-green-700">
                     {BUSINESS.phoneDisplay}
                   </div>
                   <div className="mt-1 text-sm text-gray-500">
                     Available 24x7
+                  </div>
+                </div>
+              </a>
+
+              {/* Phone 2 */}
+              <a
+                href={`tel:${BUSINESS.phone2}`}
+                className="card flex items-start gap-4 hover:border-green-300"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 shrink-0">
+                  <Phone className="h-6 w-6 text-green-700" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">
+                    Call Us (Secondary)
+                  </div>
+                  <div className="mt-1 text-lg font-bold text-green-700">
+                    {BUSINESS.phone2Display}
+                  </div>
+                  <div className="mt-1 text-sm text-gray-500">
+                    Backup number
                   </div>
                 </div>
               </a>
@@ -64,9 +85,7 @@ export default function ContactPage() {
                   <MessageCircle className="h-6 w-6 text-[#25D366]" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">
-                    WhatsApp
-                  </div>
+                  <div className="font-semibold text-gray-900">WhatsApp</div>
                   <div className="mt-1 text-lg font-bold text-[#25D366]">
                     {BUSINESS.phoneDisplay}
                   </div>
@@ -119,9 +138,7 @@ export default function ContactPage() {
                   <div className="font-semibold text-gray-900">
                     Working Hours
                   </div>
-                  <div className="mt-1 text-gray-700">
-                    {BUSINESS.hours}
-                  </div>
+                  <div className="mt-1 text-gray-700">{BUSINESS.hours}</div>
                 </div>
               </div>
             </div>
@@ -143,7 +160,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-            {/* INQUIRY FORM */}
+      {/* INQUIRY FORM */}
       <section className="section bg-green-50" id="inquiry">
         <div className="container-custom max-w-3xl">
           <SectionHeading
@@ -171,7 +188,13 @@ export default function ContactPage() {
               href={`tel:${BUSINESS.phone}`}
               className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
             >
-              📞 Call {BUSINESS.phoneDisplay}
+              📞 {BUSINESS.phoneDisplay}
+            </a>
+            <a
+              href={`tel:${BUSINESS.phone2}`}
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
+            >
+              📞 {BUSINESS.phone2Display}
             </a>
             <a
               href={whatsappLink("Hi, I want to book a cab")}

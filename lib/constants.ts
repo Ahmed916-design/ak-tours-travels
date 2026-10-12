@@ -6,7 +6,9 @@ export const BUSINESS = {
   owner: "Ammar Khorajiya",
   tagline: "Palanpur's Most Trusted Cab Service",
   phone: "+919979357086",
+  phone2: "+919925763146",
   phoneDisplay: "+91 99793 57086",
+  phone2Display: "+91 99257 63146",
   whatsapp: "919979357086",
   email: "aktoursandtravelskanoder@gmail.com",
   address: {
@@ -28,12 +30,21 @@ export const BUSINESS = {
 
 export const FLEET = [
   {
+    id: "dzire",
+    name: "Swift Dzire",
+    type: "Sedan",
+    seats: 4,
+    ac: true,
+    image: "/images/cars/dzire.jpg",
+    features: ["AC", "4 Seater", "Comfortable"],
+    popular: true,
+  },
+  {
     id: "aura",
     name: "Hyundai Aura",
     type: "Sedan",
     seats: 4,
     ac: true,
-    pricePerKm: 13,
     image: "/images/cars/aura.jpg",
     features: ["AC", "4 Seater", "Comfortable"],
     popular: true,
@@ -41,10 +52,9 @@ export const FLEET = [
   {
     id: "ertiga",
     name: "Maruti Ertiga",
-    type: "MUV",
+    type: "SUV",
     seats: 6,
     ac: true,
-    pricePerKm: 16,
     image: "/images/cars/ertiga.jpg",
     features: ["AC", "6 Seater", "Family friendly"],
     popular: true,
@@ -55,7 +65,6 @@ export const FLEET = [
     type: "SUV",
     seats: 7,
     ac: true,
-    pricePerKm: 19,
     image: "/images/cars/innova.jpg",
     features: ["AC", "7 Seater", "Premium"],
     popular: true,
@@ -63,14 +72,61 @@ export const FLEET = [
   {
     id: "urbania",
     name: "Force Urbania",
-    type: "Tempo / Van",
+    type: "Mini Bus",
     seats: 13,
     ac: true,
-    pricePerKm: 28,
     image: "/images/cars/urbania.jpg",
-    features: ["AC", "13 Seater", "Group travel"],
+    features: ["AC", "13+ Seater", "Group travel"],
     popular: false,
   },
+] as const;
+
+export const SERVICES = [
+  {
+    icon: "Car",
+    title: "One Way Cab Service",
+    desc: "Pay only for one side — perfect for one-direction trips",
+  },
+  {
+    icon: "Repeat",
+    title: "Round Trip Cab Service",
+    desc: "Comfortable round trips with the same driver throughout",
+  },
+  {
+    icon: "Plane",
+    title: "Airport Pick-up & Drop",
+    desc: "On-time transfers to Ahmedabad & Udaipur airports",
+  },
+  {
+    icon: "Train",
+    title: "Railway Pick-up & Drop",
+    desc: "Quick pickups and drops at Palanpur & Abu Road stations",
+  },
+  {
+    icon: "MapPin",
+    title: "All India Tour Service",
+    desc: "Custom tours anywhere in India — Delhi, Kashmir, Kerala & more",
+  },
+  {
+    icon: "Clock",
+    title: "24/7 Available",
+    desc: "Book anytime — day or night, we're always ready",
+  },
+] as const;
+
+export const ALL_INDIA_DESTINATIONS = [
+  "Palanpur to Mumbai",
+  "Palanpur to Delhi",
+  "Palanpur to Srinagar (Kashmir)",
+  "Palanpur to Kerala",
+  "Palanpur to Rajasthan",
+  "Palanpur to Goa",
+  "Palanpur to Jaipur",
+  "Palanpur to Dwarka",
+  "Palanpur to Somnath",
+  "Palanpur to Udaipur",
+  "Palanpur to Mount Abu",
+  "Palanpur to Ambaji",
 ] as const;
 
 export const PACKAGES = [
@@ -78,7 +134,6 @@ export const PACKAGES = [
     id: "ambaji-1day",
     title: "Ambaji Darshan",
     duration: "1 Day",
-    price: 2500,
     image: "/images/packages/ambaji.jpg",
     places: ["Palanpur", "Ambaji Temple", "Gabbar Hill", "Return"],
   },
@@ -86,7 +141,6 @@ export const PACKAGES = [
     id: "mountabu-2day",
     title: "Mount Abu Tour",
     duration: "2 Days",
-    price: 6500,
     image: "/images/packages/mountabu.jpg",
     places: ["Nakki Lake", "Dilwara Temple", "Guru Shikhar", "Sunset Point"],
   },
@@ -94,17 +148,15 @@ export const PACKAGES = [
     id: "dwarka-somnath-3day",
     title: "Dwarka - Somnath",
     duration: "3 Days",
-    price: 12000,
     image: "/images/packages/dwarka.jpg",
     places: ["Dwarkadhish Temple", "Nageshwar", "Somnath", "Bet Dwarka"],
   },
   {
-    id: "kutch-3day",
-    title: "Rann of Kutch",
-    duration: "3 Days",
-    price: 14000,
-    image: "/images/packages/kutch.jpg",
-    places: ["White Rann", "Kalo Dungar", "Bhuj", "Mandvi Beach"],
+    id: "rajasthan-tour",
+    title: "Rajasthan Tour",
+    duration: "5-7 Days",
+    image: "/images/packages/rajasthan.jpg",
+    places: ["Jaipur", "Udaipur", "Mount Abu", "Jodhpur", "Jaisalmer"],
   },
 ] as const;
 
@@ -117,7 +169,7 @@ export const WHY_US = [
   {
     icon: "IndianRupee",
     title: "Transparent Pricing",
-    desc: "No hidden charges, fair fixed rates",
+    desc: "No hidden charges, honest rates",
   },
   {
     icon: "Car",
@@ -144,9 +196,12 @@ export const SEO = {
     "Palanpur to Ahmedabad cab",
     "Palanpur to Mount Abu taxi",
     "Palanpur to Udaipur cab",
+    "Palanpur to Delhi taxi",
+    "Palanpur to Mumbai cab",
     "airport taxi Palanpur",
     "outstation cab Palanpur",
     "Innova rental Palanpur",
     "Urbania rental Palanpur",
+    "mini bus rental Palanpur",
   ],
 } as const;

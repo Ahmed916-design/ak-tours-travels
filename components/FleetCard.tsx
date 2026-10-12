@@ -1,7 +1,8 @@
 // components/FleetCard.tsx
 import Image from "next/image";
-import { Users, Snowflake } from "lucide-react";
-import { formatPrice, whatsappLink } from "@/lib/utils";
+import { Users, Snowflake, Phone } from "lucide-react";
+import { BUSINESS } from "@/lib/constants";
+import { whatsappLink } from "@/lib/utils";
 
 type FleetCardProps = {
   car: {
@@ -10,7 +11,6 @@ type FleetCardProps = {
     type: string;
     seats: number;
     ac: boolean;
-    pricePerKm: number;
     image: string;
     features: readonly string[];
     popular: boolean;
@@ -18,7 +18,7 @@ type FleetCardProps = {
 };
 
 export default function FleetCard({ car }: FleetCardProps) {
-  const bookMsg = `Hi, I want to book ${car.name}. Please share details.`;
+  const bookMsg = `Hi, I want to book ${car.name}. Please share the best rate.`;
 
   return (
     <div className="group card overflow-hidden !p-0">
@@ -42,7 +42,7 @@ export default function FleetCard({ car }: FleetCardProps) {
 
         <div className="mt-3 flex items-center gap-4 text-sm text-gray-600">
           <span className="flex items-center gap-1">
-            <Users className="h-4 w-4" /> {car.seats}
+            <Users className="h-4 w-4" /> {car.seats} Seats
           </span>
           {car.ac && (
             <span className="flex items-center gap-1">
@@ -51,21 +51,27 @@ export default function FleetCard({ car }: FleetCardProps) {
           )}
         </div>
 
-        <div className="mt-4 flex items-center justify-between border-t pt-4">
-          <div>
-            <div className="text-xl font-bold text-green-700">
-              {formatPrice(car.pricePerKm)}
-            </div>
-            <div className="text-xs text-gray-500">per km</div>
+        <div className="mt-4 border-t pt-4">
+          <div className="text-sm font-semibold text-green-700 mb-3">
+            💰 Call for Best Rate
           </div>
-          <a
-            href={whatsappLink(bookMsg)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp text-sm py-2 px-4"
-          >
-            Book Now
-          </a>
+          <div className="flex gap-2">
+            <a
+              href={`tel:${BUSINESS.phone}`}
+              className="btn-primary flex-1 text-sm py-2 px-3"
+            >
+              <Phone className="h-4 w-4" />
+              Call
+            </a>
+            <a
+              href={whatsappLink(bookMsg)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp flex-1 text-sm py-2 px-3"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ export type RouteData = {
   to: string;
   distance: number;
   duration: string;
-  basePrice: number;
   description: string;
   highlights: string[];
   metaTitle: string;
@@ -20,11 +19,10 @@ export const ROUTES: RouteData[] = [
     to: "Ambaji",
     distance: 45,
     duration: "1 hour",
-    basePrice: 1800,
     description:
       "Ambaji Temple is one of the most sacred Shakti Peethas in Gujarat, located just 45 km from Palanpur. Travel comfortably in an AC cab with A K Tours and Travels and make your pilgrimage hassle-free.",
     highlights: ["Ambaji Temple", "Gabbar Hill", "Mansarovar", "Kumbhariya Jain Temple"],
-    metaTitle: "Palanpur to Ambaji Taxi | ₹1,800 onwards | A K Tours",
+    metaTitle: "Palanpur to Ambaji Taxi | A K Tours and Travels",
     metaDesc:
       "Book Palanpur to Ambaji taxi at the best price. AC cabs, verified drivers, 24x7 service. Call +91 99793 57086 for booking.",
   },
@@ -34,11 +32,10 @@ export const ROUTES: RouteData[] = [
     to: "Mount Abu",
     distance: 120,
     duration: "2.5 hours",
-    basePrice: 3200,
     description:
       "Mount Abu is the only hill station in Rajasthan. Located 120 km from Palanpur, it's the perfect weekend getaway with Nakki Lake, Dilwara Temple, Guru Shikhar, and breathtaking sunset points.",
     highlights: ["Nakki Lake", "Dilwara Temple", "Guru Shikhar", "Sunset Point"],
-    metaTitle: "Palanpur to Mount Abu Taxi | ₹3,200 onwards | A K Tours",
+    metaTitle: "Palanpur to Mount Abu Taxi | A K Tours and Travels",
     metaDesc:
       "Palanpur to Mount Abu cab booking at affordable rates. AC Innova, Ertiga available. Call +91 99793 57086.",
   },
@@ -48,11 +45,10 @@ export const ROUTES: RouteData[] = [
     to: "Ahmedabad",
     distance: 135,
     duration: "2.5 hours",
-    basePrice: 2500,
     description:
       "Reliable cab service from Palanpur to Ahmedabad airport, railway station, or city. Visit Sabarmati Ashram, Kankaria Lake, and Adalaj Stepwell along the way.",
     highlights: ["Ahmedabad Airport", "Sabarmati Ashram", "Kankaria Lake", "Adalaj Stepwell"],
-    metaTitle: "Palanpur to Ahmedabad Cab | ₹2,500 onwards | A K Tours",
+    metaTitle: "Palanpur to Ahmedabad Cab | A K Tours and Travels",
     metaDesc:
       "Book Palanpur to Ahmedabad taxi or airport drop. Verified drivers, clean AC cars. Call +91 99793 57086.",
   },
@@ -62,11 +58,10 @@ export const ROUTES: RouteData[] = [
     to: "Udaipur",
     distance: 180,
     duration: "3.5 hours",
-    basePrice: 3800,
     description:
       "Udaipur — the City of Lakes. Located 180 km from Palanpur, it's the perfect trip for Lake Pichola, City Palace, Jag Mandir, and other iconic spots.",
     highlights: ["Lake Pichola", "City Palace", "Jag Mandir", "Saheliyon Ki Bari"],
-    metaTitle: "Palanpur to Udaipur Taxi | ₹3,800 onwards | A K Tours",
+    metaTitle: "Palanpur to Udaipur Taxi | A K Tours and Travels",
     metaDesc:
       "Palanpur to Udaipur cab service at the best rates. Comfortable AC cars, experienced drivers. Call +91 99793 57086.",
   },
@@ -76,13 +71,12 @@ export const ROUTES: RouteData[] = [
     to: "Dwarka",
     distance: 520,
     duration: "9 hours",
-    basePrice: 9500,
     description:
       "Dwarkadhish Temple is one of the four sacred Char Dhams of Gujarat. Located 520 km from Palanpur, ideal for an overnight or 2-day pilgrimage trip.",
     highlights: ["Dwarkadhish Temple", "Bet Dwarka", "Nageshwar Jyotirlinga", "Rukmini Devi Temple"],
-    metaTitle: "Palanpur to Dwarka Taxi | ₹9,500 onwards | A K Tours",
+    metaTitle: "Palanpur to Dwarka Taxi | A K Tours and Travels",
     metaDesc:
-      "Palanpur to Dwarka yatra cab booking. AC Innova, Tempo Traveller available. Call +91 99793 57086.",
+      "Palanpur to Dwarka yatra cab booking. AC Innova, Mini Bus available. Call +91 99793 57086.",
   },
   {
     slug: "palanpur-to-somnath",
@@ -90,11 +84,10 @@ export const ROUTES: RouteData[] = [
     to: "Somnath",
     distance: 580,
     duration: "10 hours",
-    basePrice: 10500,
     description:
       "Somnath Temple — a revered Jyotirlinga and the pride of Gujarat. Located 580 km from Palanpur, ideal to combine with a complete Gujarat tour.",
     highlights: ["Somnath Temple", "Bhalka Tirth", "Triveni Sangam", "Prabhas Patan Museum"],
-    metaTitle: "Palanpur to Somnath Taxi | ₹10,500 onwards | A K Tours",
+    metaTitle: "Palanpur to Somnath Taxi | A K Tours and Travels",
     metaDesc:
       "Palanpur to Somnath cab with experienced drivers. Best rates, AC cars. Call +91 99793 57086.",
   },
@@ -104,11 +97,10 @@ export const ROUTES: RouteData[] = [
     to: "Rann of Kutch",
     distance: 400,
     duration: "7 hours",
-    basePrice: 7500,
     description:
       "The White Rann of Kutch — a world-famous salt desert. Best visited during Rann Utsav (Nov-Feb). Located 400 km from Palanpur.",
     highlights: ["White Rann", "Kalo Dungar", "Bhuj", "Mandvi Beach"],
-    metaTitle: "Palanpur to Kutch Taxi | ₹7,500 onwards | A K Tours",
+    metaTitle: "Palanpur to Kutch Taxi | A K Tours and Travels",
     metaDesc:
       "Palanpur to Rann of Kutch cab booking. Rann Utsav packages available. Call +91 99793 57086.",
   },
@@ -118,11 +110,10 @@ export const ROUTES: RouteData[] = [
     to: "Deesa",
     distance: 30,
     duration: "40 min",
-    basePrice: 1000,
     description:
       "Deesa — the second largest city in Banaskantha. Just 30 km from Palanpur, perfect for daily commutes and business trips.",
     highlights: ["Deesa City", "Local Market", "Business Hub"],
-    metaTitle: "Palanpur to Deesa Taxi | ₹1,000 onwards | A K Tours",
+    metaTitle: "Palanpur to Deesa Taxi | A K Tours and Travels",
     metaDesc: "Palanpur to Deesa cab at the best price. Quick, reliable service. Call +91 99793 57086.",
   },
   {
@@ -131,11 +122,10 @@ export const ROUTES: RouteData[] = [
     to: "Chhapi",
     distance: 35,
     duration: "45 min",
-    basePrice: 1100,
     description:
       "Chhapi sits on the Gujarat-Rajasthan border. Located 35 km from Palanpur — a convenient cab stop on the highway.",
     highlights: ["Chhapi Town", "Highway Rest Point"],
-    metaTitle: "Palanpur to Chhapi Taxi | ₹1,100 onwards | A K Tours",
+    metaTitle: "Palanpur to Chhapi Taxi | A K Tours and Travels",
     metaDesc: "Book Palanpur to Chhapi cab. Reliable service, fair rates. Call +91 99793 57086.",
   },
   {
@@ -144,11 +134,10 @@ export const ROUTES: RouteData[] = [
     to: "Vadgam",
     distance: 20,
     duration: "30 min",
-    basePrice: 800,
     description:
       "Vadgam — a historic town near Palanpur. Affordable cab for local rides.",
     highlights: ["Vadgam Town"],
-    metaTitle: "Palanpur to Vadgam Taxi | ₹800 onwards | A K Tours",
+    metaTitle: "Palanpur to Vadgam Taxi | A K Tours and Travels",
     metaDesc: "Palanpur to Vadgam cab booking. Fast, affordable. Call +91 99793 57086.",
   },
   {
@@ -157,11 +146,10 @@ export const ROUTES: RouteData[] = [
     to: "Ahmedabad Airport",
     distance: 145,
     duration: "3 hours",
-    basePrice: 2800,
     description:
       "On-time airport transfer from Palanpur to Ahmedabad International Airport. Early morning and late-night pickups available with guaranteed punctuality.",
     highlights: ["Ahmedabad Airport", "On-Time Pickup", "24x7 Available"],
-    metaTitle: "Palanpur to Ahmedabad Airport Taxi | ₹2,800 | A K Tours",
+    metaTitle: "Palanpur to Ahmedabad Airport Taxi | A K Tours and Travels",
     metaDesc:
       "Palanpur to Ahmedabad airport transfer. On-time, comfortable, 24x7. Call +91 99793 57086.",
   },
@@ -171,11 +159,10 @@ export const ROUTES: RouteData[] = [
     to: "Palanpur Railway Station",
     distance: 5,
     duration: "10 min",
-    basePrice: 300,
     description:
       "Quick pickup and drop service to Palanpur Railway Station. Ideal for local transfers.",
     highlights: ["Railway Station Pickup", "Local Transfer"],
-    metaTitle: "Palanpur Railway Station Taxi | A K Tours",
+    metaTitle: "Palanpur Railway Station Taxi | A K Tours and Travels",
     metaDesc: "Palanpur railway station pickup/drop cab. Quick booking. Call +91 99793 57086.",
   },
   {
@@ -184,38 +171,62 @@ export const ROUTES: RouteData[] = [
     to: "Mumbai",
     distance: 720,
     duration: "12 hours",
-    basePrice: 13000,
     description:
-      "Palanpur to Mumbai outstation cab. One-way or round-trip, comfortable overnight journey.",
+      "Palanpur to Mumbai outstation cab. One-way or round-trip, comfortable overnight journey. Perfect for business trips and family visits.",
     highlights: ["Mumbai City", "Airport Drop", "Overnight Trip"],
-    metaTitle: "Palanpur to Mumbai Taxi | ₹13,000 onwards | A K Tours",
+    metaTitle: "Palanpur to Mumbai Taxi | A K Tours and Travels",
     metaDesc: "Palanpur to Mumbai cab service. AC cars, experienced drivers. Call +91 99793 57086.",
   },
   {
-    slug: "palanpur-to-goa",
+    slug: "palanpur-to-delhi",
     from: "Palanpur",
-    to: "Goa",
-    distance: 1200,
-    duration: "20 hours",
-    basePrice: 22000,
+    to: "Delhi",
+    distance: 950,
+    duration: "16 hours",
     description:
-      "Multi-day Palanpur to Goa trip. Tempo Traveller and Innova available for families and groups.",
-    highlights: ["Goa Beaches", "Multi-Day Trip", "Tempo Available"],
-    metaTitle: "Palanpur to Goa Taxi | ₹22,000 onwards | A K Tours",
-    metaDesc: "Palanpur to Goa cab package. Group travel, AC tempo. Call +91 99793 57086.",
+      "Palanpur to Delhi outstation cab. Long-distance comfortable journey with experienced drivers. One-way or round-trip available.",
+    highlights: ["Delhi City", "India Gate", "Red Fort", "Airport Drop"],
+    metaTitle: "Palanpur to Delhi Taxi | A K Tours and Travels",
+    metaDesc: "Palanpur to Delhi cab service. AC Innova, Mini Bus available. Call +91 99793 57086.",
   },
   {
-    slug: "palanpur-to-jaipur",
+    slug: "palanpur-to-srinagar-kashmir",
     from: "Palanpur",
-    to: "Jaipur",
-    distance: 550,
-    duration: "9 hours",
-    basePrice: 10500,
+    to: "Srinagar (Kashmir)",
+    distance: 1700,
+    duration: "30 hours",
     description:
-      "Palanpur to Jaipur — the Pink City. A perfect start to a Rajasthan tour. Visit Amber Fort, Hawa Mahal, and City Palace.",
-    highlights: ["Amber Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
-    metaTitle: "Palanpur to Jaipur Taxi | ₹10,500 onwards | A K Tours",
-    metaDesc: "Palanpur to Jaipur cab booking. Rajasthan tour packages. Call +91 99793 57086.",
+      "All India tour service — Palanpur to Srinagar, Kashmir. Multi-day tour with comfortable AC vehicles. Customizable itinerary.",
+    highlights: ["Dal Lake", "Mughal Gardens", "Gulmarg", "Pahalgam"],
+    metaTitle: "Palanpur to Kashmir Taxi | A K Tours and Travels",
+    metaDesc:
+      "Palanpur to Srinagar Kashmir tour package. Multi-day trips, AC cars. Call +91 99793 57086.",
+  },
+  {
+    slug: "palanpur-to-kerala",
+    from: "Palanpur",
+    to: "Kerala",
+    distance: 2100,
+    duration: "36 hours",
+    description:
+      "All India tour service — Palanpur to Kerala. Multi-day tour covering God's Own Country. Customizable itinerary with AC vehicles.",
+    highlights: ["Munnar", "Alleppey Backwaters", "Kochi", "Thekkady"],
+    metaTitle: "Palanpur to Kerala Taxi | A K Tours and Travels",
+    metaDesc:
+      "Palanpur to Kerala cab tour package. Multi-day trips, AC cars. Call +91 99793 57086.",
+  },
+  {
+    slug: "palanpur-to-rajasthan",
+    from: "Palanpur",
+    to: "Rajasthan",
+    distance: 500,
+    duration: "9 hours",
+    description:
+      "Complete Rajasthan tour from Palanpur. Cover Jaipur, Udaipur, Jodhpur, Jaisalmer, and Mount Abu with a customizable multi-day package.",
+    highlights: ["Jaipur", "Udaipur", "Jodhpur", "Jaisalmer"],
+    metaTitle: "Palanpur to Rajasthan Tour | A K Tours and Travels",
+    metaDesc:
+      "Palanpur to Rajasthan tour package. Customizable multi-day trips. Call +91 99793 57086.",
   },
 ];
 
