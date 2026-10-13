@@ -135,28 +135,36 @@ export const PACKAGES = [
     title: "Ambaji Darshan",
     duration: "1 Day",
     image: "/images/packages/ambaji.jpg",
-    places: ["Palanpur", "Ambaji Temple", "Gabbar Hill", "Return"],
+    places: ["Palanpur", "Ambaji Temple", "Gabbar Hill", "Mansarovar", "Return"],
+    description:
+      "Complete one-day darshan of the sacred Ambaji Temple and Gabbar Hill. Comfortable AC cab with experienced driver.",
   },
   {
     id: "mountabu-2day",
     title: "Mount Abu Tour",
     duration: "2 Days",
     image: "/images/packages/mountabu.jpg",
-    places: ["Nakki Lake", "Dilwara Temple", "Guru Shikhar", "Sunset Point"],
+    places: ["Nakki Lake", "Dilwara Temple", "Guru Shikhar", "Sunset Point", "Honeymoon Point"],
+    description:
+      "Explore Rajasthan's only hill station — Nakki Lake, Dilwara temples, Guru Shikhar, and breathtaking sunset views.",
   },
   {
     id: "dwarka-somnath-3day",
     title: "Dwarka - Somnath",
     duration: "3 Days",
     image: "/images/packages/dwarka.jpg",
-    places: ["Dwarkadhish Temple", "Nageshwar", "Somnath", "Bet Dwarka"],
+    places: ["Dwarkadhish Temple", "Nageshwar Jyotirlinga", "Somnath Temple", "Bet Dwarka", "Rukmini Temple"],
+    description:
+      "Sacred pilgrimage covering two of Gujarat's most revered temples — Dwarkadhish and Somnath Jyotirlinga.",
   },
   {
     id: "rajasthan-tour",
     title: "Rajasthan Tour",
     duration: "5-7 Days",
     image: "/images/packages/rajasthan.jpg",
-    places: ["Jaipur", "Udaipur", "Mount Abu", "Jodhpur", "Jaisalmer"],
+    places: ["Jaipur", "Udaipur", "Mount Abu", "Jodhpur", "Jaisalmer", "Pushkar"],
+    description:
+      "Complete Rajasthan experience — Pink City, City of Lakes, Blue City, Golden City, and the only hill station. Fully customizable.",
   },
 ] as const;
 

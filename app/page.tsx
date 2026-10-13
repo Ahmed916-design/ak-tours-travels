@@ -1,5 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
+import Image from "next/image";
 import {
   ShieldCheck,
   IndianRupee,
@@ -8,16 +9,14 @@ import {
   CheckCircle2,
   Star,
   ArrowRight,
-  Plane,
-  Train,
   MapPin,
-  Repeat,
-  Clock,
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import FleetCard from "@/components/FleetCard";
 import RouteCard from "@/components/RouteCard";
+import ServiceCard from "@/components/ServiceCard";
+import ReviewCard from "@/components/ReviewCard";
 import InquirySection from "@/components/InquirySection";
 import {
   FLEET,
@@ -34,15 +33,6 @@ const WHY_ICONS: Record<string, any> = {
   IndianRupee,
   Car,
   Headset,
-};
-
-const SERVICE_ICONS: Record<string, any> = {
-  Car,
-  Repeat,
-  Plane,
-  Train,
-  MapPin,
-  Clock,
 };
 
 export default function HomePage() {
@@ -64,14 +54,17 @@ export default function HomePage() {
             {WHY_US.map((item) => {
               const Icon = WHY_ICONS[item.icon] || Car;
               return (
-                <div key={item.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-                    <Icon className="h-7 w-7 text-green-700" />
+                <div
+                  key={item.title}
+                  className="group text-center transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100 transition-all duration-500 group-hover:from-primary-600 group-hover:to-primary-700 group-hover:scale-110 group-hover:shadow-premium">
+                    <Icon className="h-8 w-8 text-primary-700 transition-colors duration-500 group-hover:text-white" />
                   </div>
-                  <h3 className="mt-4 font-semibold text-gray-900">
+                  <h3 className="mt-5 font-display text-lg font-semibold text-gray-900">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-600">{item.desc}</p>
+                  <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
                 </div>
               );
             })}
@@ -80,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="section bg-gray-50">
+      <section className="section-cream">
         <div className="container-custom">
           <SectionHeading
             eyebrow="Our Services"
@@ -88,24 +81,9 @@ export default function HomePage() {
             subtitle="One way, round trip, airport, railway, and All India tours"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((service) => {
-              const Icon = SERVICE_ICONS[service.icon] || Car;
-              return (
-                <div key={service.title} className="card flex gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 shrink-0">
-                    <Icon className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">
-                      {service.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-600">
-                      {service.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+            {SERVICES.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
           </div>
         </div>
       </section>
@@ -159,7 +137,7 @@ export default function HomePage() {
       </section>
 
       {/* ALL INDIA TOUR */}
-      <section className="section bg-green-50">
+      <section className="section-cream">
         <div className="container-custom">
           <SectionHeading
             eyebrow="All India Tour Service"
@@ -170,9 +148,11 @@ export default function HomePage() {
             {ALL_INDIA_DESTINATIONS.map((dest) => (
               <div
                 key={dest}
-                className="card flex items-center gap-3 !py-4"
+                className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-5 py-4 transition-all duration-300 hover:border-primary-200 hover:shadow-soft hover:-translate-y-0.5"
               >
-                <MapPin className="h-5 w-5 text-green-600 shrink-0" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 transition-colors duration-300 group-hover:bg-primary-600">
+                  <MapPin className="h-4 w-4 text-primary-600 transition-colors duration-300 group-hover:text-white" />
+                </div>
                 <span className="font-medium text-gray-800">{dest}</span>
               </div>
             ))}
@@ -180,7 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TOUR PACKAGES */}
+            {/* TOUR PACKAGES */}
       <section className="section bg-white">
         <div className="container-custom">
           <SectionHeading
@@ -190,103 +170,155 @@ export default function HomePage() {
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PACKAGES.map((pkg) => (
-              <div key={pkg.id} className="card !p-0 overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <span className="text-green-800 font-semibold text-center px-3">
-                    {pkg.title}
-                  </span>
+              <Link
+                key={pkg.id}
+                href={`/packages#${pkg.id}`}
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-soft transition-all duration-300 hover:shadow-premium hover:-translate-y-1"
+              >
+                {/* Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <Image
+                    src={pkg.image}
+                    alt={`${pkg.title} tour package`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Duration Badge */}
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-2.5 py-1 text-xs font-bold text-white shadow-gold">
+                    {pkg.duration}
+                  </div>
+
+                  {/* Title on image */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-display text-lg font-bold text-white drop-shadow-lg leading-tight">
+                      {pkg.title}
+                    </h3>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <div className="text-xs text-gray-500">{pkg.duration}</div>
-                  <h3 className="mt-1 font-bold text-gray-900">{pkg.title}</h3>
-                  <ul className="mt-3 space-y-1 text-sm text-gray-600">
+
+                {/* Body */}
+                <div className="p-4">
+                  <ul className="space-y-1.5 text-sm text-gray-600">
                     {pkg.places.slice(0, 3).map((place) => (
                       <li key={place} className="flex gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-4 w-4 text-primary-600 shrink-0 mt-0.5" />
                         {place}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 flex items-center justify-between border-t pt-4">
-                    <div className="text-sm font-semibold text-green-700">
+
+                  <div className="mt-4 flex items-center justify-between border-t pt-3">
+                    <div className="text-xs font-semibold text-primary-700">
                       Call for Best Rate
                     </div>
-                    <Link
-                      href="/packages"
-                      className="text-sm font-semibold text-green-700 hover:underline"
-                    >
-                      Details →
-                    </Link>
+                    <ArrowRight className="h-4 w-4 text-primary-600 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section className="section bg-gray-50">
+            {/* REVIEWS */}
+      <section className="section-cream">
         <div className="container-custom">
           <SectionHeading
             eyebrow="Customer Reviews"
             title="5000+ Happy Customers"
             subtitle="Trusted by people across Palanpur and nearby areas"
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                name: "Rajesh Patel",
-                city: "Palanpur",
-                text: "Best cab service in Palanpur. Driver was very polite and the car was clean. Highly recommended!",
-              },
-              {
-                name: "Priya Shah",
-                city: "Deesa",
-                text: "Booked the Ambaji tour package for my family. Great experience, fair pricing. Thank you A K Tours!",
-              },
-              {
-                name: "Mehul Joshi",
-                city: "Palanpur",
-                text: "On-time drop to Ahmedabad airport. Safe driving, clean AC car. Will definitely book again.",
-              },
-            ].map((r) => (
-              <div key={r.name} className="card">
-                <div className="flex gap-1 text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <ReviewCard
+              name="Rajesh Patel"
+              city="Palanpur"
+              text="Best cab service in Palanpur. Driver was very polite and the car was clean. Highly recommended!"
+              date="1 week ago"
+            />
+            <ReviewCard
+              name="Priya Shah"
+              city="Deesa"
+              text="Booked the Ambaji tour package for my family. Great experience, fair pricing. Thank you A K Tours!"
+              date="2 weeks ago"
+            />
+            <ReviewCard
+              name="Mehul Joshi"
+              city="Palanpur"
+              text="On-time drop to Ahmedabad airport. Safe driving, clean AC car. Will definitely book again."
+              date="3 weeks ago"
+            />
+            <ReviewCard
+              name="Kiran Desai"
+              city="Palanpur"
+              text="Booked Innova for Rajasthan trip. Driver was excellent, very knowledgeable about routes. Great experience."
+              date="1 month ago"
+            />
+            <ReviewCard
+              name="Anjali Mehta"
+              city="Ahmedabad"
+              text="Used their service for Ahmedabad airport pickup. Very professional and on-time. Will recommend to friends."
+              date="1 month ago"
+            />
+            <ReviewCard
+              name="Suresh Kumar"
+              city="Mount Abu"
+              text="Excellent service for Mount Abu trip. Comfortable car, courteous driver, and reasonable pricing."
+              date="1 month ago"
+            />
+          </div>
+
+          {/* Trust Footer */}
+          <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-soft md:flex-row md:justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-gold">
+                <Star className="h-7 w-7 fill-white text-white" />
+              </div>
+              <div>
+                <div className="font-display text-2xl font-bold text-gray-900">
+                  4.8 / 5.0
                 </div>
-                <p className="mt-3 text-gray-700 italic">"{r.text}"</p>
-                <div className="mt-4 text-sm">
-                  <div className="font-semibold text-gray-900">{r.name}</div>
-                  <div className="text-gray-500">{r.city}</div>
+                <div className="text-sm text-gray-500">
+                  Based on Google Reviews
                 </div>
               </div>
-            ))}
+            </div>
+            <a
+              href={`https://wa.me/${BUSINESS.whatsapp}?text=Hi%2C%20I%20want%20to%20share%20my%20feedback`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Share Your Feedback
+            </a>
           </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-green-700 text-white">
-        <div className="container-custom py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 text-white">
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,white_1px,transparent_1px)] bg-[length:24px_24px]" />
+
+        <div className="relative z-10 container-custom py-16 md:py-20 text-center">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold">
             Ready to Book Your Cab?
           </h2>
-          <p className="mt-3 text-green-100 max-w-2xl mx-auto">
+          <p className="mt-4 text-primary-100 max-w-2xl mx-auto text-lg">
             Call or WhatsApp us — get instant confirmation. Available 24x7.
           </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href={`tel:${BUSINESS.phone}`}
-              className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-4 font-semibold text-primary-700 shadow-premium transition-all duration-300 hover:bg-primary-50 hover:scale-105 active:scale-95"
             >
               📞 {BUSINESS.phoneDisplay}
             </a>
             <a
               href={`tel:${BUSINESS.phone2}`}
-              className="rounded-lg bg-white px-6 py-3 font-semibold text-green-700 hover:bg-green-50"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-4 font-semibold text-primary-700 shadow-premium transition-all duration-300 hover:bg-primary-50 hover:scale-105 active:scale-95"
             >
               📞 {BUSINESS.phone2Display}
             </a>
@@ -294,7 +326,7 @@ export default function HomePage() {
               href={`https://wa.me/${BUSINESS.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-[#25D366] px-6 py-3 font-semibold text-white hover:bg-[#1ebe57]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-7 py-4 font-semibold text-white shadow-premium transition-all duration-300 hover:bg-[#1ebe57] hover:scale-105 active:scale-95"
             >
               💬 WhatsApp Now
             </a>

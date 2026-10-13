@@ -1,80 +1,130 @@
 // components/Hero.tsx
-import { Phone, MessageCircle, Star, ShieldCheck, Clock } from "lucide-react";
+import Image from "next/image";
+import { Phone, MessageCircle, Star, ShieldCheck, Clock, MapPin } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 import { whatsappLink } from "@/lib/utils";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50">
-      <div className="container-custom py-16 md:py-24">
-        <div className="grid gap-12 md:grid-cols-2 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-1.5 text-sm font-medium text-green-800">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              Welcome to A K Tour & Travels
+    <section className="relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero/hero-bg.jpg"
+          alt="Premium cab service - A K Tours and Travels"
+          fill
+          priority
+          className="object-cover object-bottom md:object-center"
+          sizes="100vw"
+        />
+        {/* Dark Green Gradient Overlay — Lightened More */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/70 via-primary-800/55 to-primary-900/80 md:from-primary-900/60 md:via-primary-800/45 md:to-primary-900/70" />
+        {/* Brightness Boost */}
+        <div className="absolute inset-0 bg-white/5" />
+        {/* Subtle Pattern */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,white_1px,transparent_1px)] bg-[length:24px_24px]" />
+      </div>
+
+      {/* Content */}
+    <div className="relative z-10 container-custom py-16 md:py-28 lg:py-32">
+        <div className="grid gap-12 lg:grid-cols-5 items-center">
+          {/* LEFT SIDE — 3 columns */}
+          <div className="lg:col-span-3 text-white animate-fade-in-up">
+            {/* Trust Badge */}
+            <span className="inline-flex items-center gap-2 rounded-full bg-gold-500/20 border border-gold-400/40 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-gold-200">
+              <Star className="h-4 w-4 fill-gold-400 text-gold-400" />
+              Trusted by 5000+ Travelers
             </span>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Book Your Ride{" "}
-              <span className="text-green-600">Anywhere in India</span>{" "}
+
+            {/* Main Headline */}
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] text-balance">
+              Book Your Ride
+              <br />
+              <span className="text-gradient-gold">Anywhere in India</span>
+              <br />
               in 2 Minutes
             </h1>
-            <p className="mt-5 text-lg text-gray-600">
-              Professional & reliable drivers. Local, outstation, airport
-              transfers, and All India tour packages. 24x7 available.
+
+            {/* Subheading */}
+            <p className="mt-6 text-lg md:text-xl text-primary-50/90 max-w-xl leading-relaxed">
+              Professional & reliable drivers. Local rides, outstation trips,
+              airport transfers, and All India tour packages. Available 24x7.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={`tel:${BUSINESS.phone}`}
-                className="btn-primary text-base py-3 px-6"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-4 font-semibold text-primary-800 shadow-premium transition-all duration-300 hover:bg-primary-50 hover:scale-105 active:scale-95"
               >
                 <Phone className="h-5 w-5" />
                 Call Now
               </a>
               <a
-                href={whatsappLink("Hi, I want to book a cab in Palanpur")}
+                href={whatsappLink("Hi, I want to book a cab")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp text-base py-3 px-6"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-7 py-4 font-semibold text-white shadow-premium transition-all duration-300 hover:bg-[#1ebe57] hover:scale-105 active:scale-95"
               >
                 <MessageCircle className="h-5 w-5" />
                 WhatsApp
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-600">
+            {/* Trust Indicators */}
+            <div className="mt-10 mb-16 flex flex-wrap gap-x-6 gap-y-3 text-sm text-primary-50/90 md:mb-0 md:gap-x-8">
               <span className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-green-600" /> Verified Drivers
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                  <ShieldCheck className="h-4 w-4 text-gold-400" />
+                </div>
+                Verified Drivers
               </span>
               <span className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-green-600" /> 24x7 Service
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                  <Clock className="h-4 w-4 text-gold-400" />
+                </div>
+                24x7 Service
               </span>
               <span className="flex items-center gap-2">
-                <Star className="h-5 w-5 text-green-600" /> 4.8★ Rated
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                  <Star className="h-4 w-4 text-gold-400 fill-gold-400" />
+                </div>
+                4.8★ Rated
               </span>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-xl md:p-8">
-              <h3 className="text-xl font-bold text-gray-900">
-                Quick Booking
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">
-                Call or WhatsApp — confirmed in 2 minutes
-              </p>
+          {/* RIGHT SIDE — 2 columns — Glassmorphism Booking Card */}
+          <div className="lg:col-span-2 animate-fade-in-up animate-delay-200">
+            <div className="rounded-3xl bg-white/55 backdrop-blur-2xl border border-white/50 p-6 md:p-8 shadow-2xl">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-premium">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-gray-900">
+                    Quick Booking
+                  </h3>
+                  <p className="text-xs text-gray-500">
+                    Confirmed in 2 minutes
+                  </p>
+                </div>
+              </div>
 
-              <div className="mt-6 space-y-3">
-                <a href={`tel:${BUSINESS.phone}`} className="btn-primary w-full">
+              <div className="space-y-3">
+                <a
+                  href={`tel:${BUSINESS.phone}`}
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-primary-600 px-5 py-4 font-semibold text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-premium active:scale-95"
+                >
                   <Phone className="h-5 w-5" />
-                  Call {BUSINESS.phoneDisplay}
+                  {BUSINESS.phoneDisplay}
                 </a>
                 <a
                   href={`tel:${BUSINESS.phone2}`}
-                  className="btn-primary w-full"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-primary-600 px-5 py-4 font-semibold text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-premium active:scale-95"
                 >
                   <Phone className="h-5 w-5" />
-                  Call {BUSINESS.phone2Display}
+                  {BUSINESS.phone2Display}
                 </a>
                 <a
                   href={whatsappLink(
@@ -82,31 +132,47 @@ export default function Hero() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-whatsapp w-full"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#25D366] px-5 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#1ebe57] hover:shadow-premium active:scale-95"
                 >
                   <MessageCircle className="h-5 w-5" />
                   WhatsApp Booking
                 </a>
               </div>
 
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                <div className="rounded-lg bg-green-50 p-3">
-                  <div className="text-xl font-bold text-green-700">15+</div>
-                  <div className="text-xs text-gray-600">Cars</div>
+              {/* Stats Row */}
+              <div className="mt-6 grid grid-cols-3 gap-2 text-center">
+                <div className="rounded-xl bg-primary-50 p-3">
+                  <div className="font-display text-lg font-bold text-primary-700">
+                    15+
+                  </div>
+                  <div className="text-[10px] uppercase tracking-wide text-gray-600">
+                    Cars
+                  </div>
                 </div>
-                <div className="rounded-lg bg-green-50 p-3">
-                  <div className="text-xl font-bold text-green-700">5000+</div>
-                  <div className="text-xs text-gray-600">Trips</div>
+                <div className="rounded-xl bg-primary-50 p-3">
+                  <div className="font-display text-lg font-bold text-primary-700">
+                    5000+
+                  </div>
+                  <div className="text-[10px] uppercase tracking-wide text-gray-600">
+                    Trips
+                  </div>
                 </div>
-                <div className="rounded-lg bg-green-50 p-3">
-                  <div className="text-xl font-bold text-green-700">4.8★</div>
-                  <div className="text-xs text-gray-600">Rating</div>
+                <div className="rounded-xl bg-gold-50 p-3">
+                  <div className="font-display text-lg font-bold text-gold-700">
+                    4.8★
+                  </div>
+                  <div className="text-[10px] uppercase tracking-wide text-gray-600">
+                    Rating
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Bottom Wave / Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }

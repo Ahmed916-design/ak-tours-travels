@@ -6,6 +6,7 @@ export type RouteData = {
   to: string;
   distance: number;
   duration: string;
+  image: string;
   description: string;
   highlights: string[];
   metaTitle: string;
@@ -19,6 +20,7 @@ export const ROUTES: RouteData[] = [
     to: "Ambaji",
     distance: 45,
     duration: "1 hour",
+    image: "/images/destinations/ambaji.jpg",
     description:
       "Ambaji Temple is one of the most sacred Shakti Peethas in Gujarat, located just 45 km from Palanpur. Travel comfortably in an AC cab with A K Tours and Travels and make your pilgrimage hassle-free.",
     highlights: ["Ambaji Temple", "Gabbar Hill", "Mansarovar", "Kumbhariya Jain Temple"],
@@ -32,6 +34,7 @@ export const ROUTES: RouteData[] = [
     to: "Mount Abu",
     distance: 120,
     duration: "2.5 hours",
+    image: "/images/destinations/mount-abu.jpg",
     description:
       "Mount Abu is the only hill station in Rajasthan. Located 120 km from Palanpur, it's the perfect weekend getaway with Nakki Lake, Dilwara Temple, Guru Shikhar, and breathtaking sunset points.",
     highlights: ["Nakki Lake", "Dilwara Temple", "Guru Shikhar", "Sunset Point"],
@@ -45,6 +48,7 @@ export const ROUTES: RouteData[] = [
     to: "Ahmedabad",
     distance: 135,
     duration: "2.5 hours",
+    image: "/images/destinations/ahmedabad.jpg",
     description:
       "Reliable cab service from Palanpur to Ahmedabad airport, railway station, or city. Visit Sabarmati Ashram, Kankaria Lake, and Adalaj Stepwell along the way.",
     highlights: ["Ahmedabad Airport", "Sabarmati Ashram", "Kankaria Lake", "Adalaj Stepwell"],
@@ -58,6 +62,7 @@ export const ROUTES: RouteData[] = [
     to: "Udaipur",
     distance: 180,
     duration: "3.5 hours",
+    image: "/images/destinations/udaipur.jpg",
     description:
       "Udaipur — the City of Lakes. Located 180 km from Palanpur, it's the perfect trip for Lake Pichola, City Palace, Jag Mandir, and other iconic spots.",
     highlights: ["Lake Pichola", "City Palace", "Jag Mandir", "Saheliyon Ki Bari"],
@@ -71,6 +76,7 @@ export const ROUTES: RouteData[] = [
     to: "Dwarka",
     distance: 520,
     duration: "9 hours",
+    image: "/images/destinations/dwarka.jpg",
     description:
       "Dwarkadhish Temple is one of the four sacred Char Dhams of Gujarat. Located 520 km from Palanpur, ideal for an overnight or 2-day pilgrimage trip.",
     highlights: ["Dwarkadhish Temple", "Bet Dwarka", "Nageshwar Jyotirlinga", "Rukmini Devi Temple"],
@@ -84,6 +90,7 @@ export const ROUTES: RouteData[] = [
     to: "Somnath",
     distance: 580,
     duration: "10 hours",
+    image: "/images/destinations/somnath.jpg",
     description:
       "Somnath Temple — a revered Jyotirlinga and the pride of Gujarat. Located 580 km from Palanpur, ideal to combine with a complete Gujarat tour.",
     highlights: ["Somnath Temple", "Bhalka Tirth", "Triveni Sangam", "Prabhas Patan Museum"],
@@ -97,6 +104,7 @@ export const ROUTES: RouteData[] = [
     to: "Rann of Kutch",
     distance: 400,
     duration: "7 hours",
+    image: "/images/destinations/kutch.jpg",
     description:
       "The White Rann of Kutch — a world-famous salt desert. Best visited during Rann Utsav (Nov-Feb). Located 400 km from Palanpur.",
     highlights: ["White Rann", "Kalo Dungar", "Bhuj", "Mandvi Beach"],
@@ -110,6 +118,7 @@ export const ROUTES: RouteData[] = [
     to: "Deesa",
     distance: 30,
     duration: "40 min",
+    image: "/images/destinations/deesa.jpg",
     description:
       "Deesa — the second largest city in Banaskantha. Just 30 km from Palanpur, perfect for daily commutes and business trips.",
     highlights: ["Deesa City", "Local Market", "Business Hub"],
@@ -122,6 +131,7 @@ export const ROUTES: RouteData[] = [
     to: "Chhapi",
     distance: 35,
     duration: "45 min",
+    image: "/images/destinations/chhapi.jpg",
     description:
       "Chhapi sits on the Gujarat-Rajasthan border. Located 35 km from Palanpur — a convenient cab stop on the highway.",
     highlights: ["Chhapi Town", "Highway Rest Point"],
@@ -134,6 +144,7 @@ export const ROUTES: RouteData[] = [
     to: "Vadgam",
     distance: 20,
     duration: "30 min",
+    image: "/images/destinations/vadgam.jpg",
     description:
       "Vadgam — a historic town near Palanpur. Affordable cab for local rides.",
     highlights: ["Vadgam Town"],
@@ -146,6 +157,7 @@ export const ROUTES: RouteData[] = [
     to: "Ahmedabad Airport",
     distance: 145,
     duration: "3 hours",
+    image: "/images/destinations/airport.jpg",
     description:
       "On-time airport transfer from Palanpur to Ahmedabad International Airport. Early morning and late-night pickups available with guaranteed punctuality.",
     highlights: ["Ahmedabad Airport", "On-Time Pickup", "24x7 Available"],
@@ -159,6 +171,7 @@ export const ROUTES: RouteData[] = [
     to: "Palanpur Railway Station",
     distance: 5,
     duration: "10 min",
+    image: "/images/destinations/railway.jpg",
     description:
       "Quick pickup and drop service to Palanpur Railway Station. Ideal for local transfers.",
     highlights: ["Railway Station Pickup", "Local Transfer"],
@@ -171,6 +184,7 @@ export const ROUTES: RouteData[] = [
     to: "Mumbai",
     distance: 720,
     duration: "12 hours",
+    image: "/images/destinations/mumbai.jpg",
     description:
       "Palanpur to Mumbai outstation cab. One-way or round-trip, comfortable overnight journey. Perfect for business trips and family visits.",
     highlights: ["Mumbai City", "Airport Drop", "Overnight Trip"],
@@ -183,6 +197,7 @@ export const ROUTES: RouteData[] = [
     to: "Delhi",
     distance: 950,
     duration: "16 hours",
+    image: "/images/destinations/delhi.jpg",
     description:
       "Palanpur to Delhi outstation cab. Long-distance comfortable journey with experienced drivers. One-way or round-trip available.",
     highlights: ["Delhi City", "India Gate", "Red Fort", "Airport Drop"],
@@ -195,6 +210,7 @@ export const ROUTES: RouteData[] = [
     to: "Srinagar (Kashmir)",
     distance: 1700,
     duration: "30 hours",
+    image: "/images/destinations/kashmir.jpg",
     description:
       "All India tour service — Palanpur to Srinagar, Kashmir. Multi-day tour with comfortable AC vehicles. Customizable itinerary.",
     highlights: ["Dal Lake", "Mughal Gardens", "Gulmarg", "Pahalgam"],
@@ -208,6 +224,7 @@ export const ROUTES: RouteData[] = [
     to: "Kerala",
     distance: 2100,
     duration: "36 hours",
+    image: "/images/destinations/kerala.jpg",
     description:
       "All India tour service — Palanpur to Kerala. Multi-day tour covering God's Own Country. Customizable itinerary with AC vehicles.",
     highlights: ["Munnar", "Alleppey Backwaters", "Kochi", "Thekkady"],
@@ -221,6 +238,7 @@ export const ROUTES: RouteData[] = [
     to: "Rajasthan",
     distance: 500,
     duration: "9 hours",
+    image: "/images/destinations/rajasthan.jpg",
     description:
       "Complete Rajasthan tour from Palanpur. Cover Jaipur, Udaipur, Jodhpur, Jaisalmer, and Mount Abu with a customizable multi-day package.",
     highlights: ["Jaipur", "Udaipur", "Jodhpur", "Jaisalmer"],
