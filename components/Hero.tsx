@@ -171,8 +171,58 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom Wave / Fade */}
+           {/* Bottom Wave / Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10" />
+
+      {/* Popular Routes Strip — BELOW Hero */}
+      <div className="relative z-20 bg-white border-b border-gray-100 shadow-soft">
+        <div className="container-custom py-5">
+          <div className="flex items-center gap-4">
+            {/* Label */}
+            <div className="hidden md:flex items-center gap-2 shrink-0">
+              <span className="text-2xl">🚕</span>
+              <div className="leading-tight">
+                <div className="font-display text-sm font-bold text-gray-900">
+                  Popular Routes
+                </div>
+                <div className="text-xs text-gray-500">Most booked by our customers</div>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden md:block h-10 w-px bg-gray-200 shrink-0" />
+
+            {/* Chips — Scrollable */}
+            <div className="flex-1 overflow-x-auto scrollbar-hide">
+              <div className="flex gap-2 min-w-max py-1">
+                {[
+                  { slug: "palanpur-to-mumbai", from: "Palanpur", to: "Mumbai", emoji: "🌊" },
+                  { slug: "ahmedabad-to-palanpur", from: "Ahmedabad", to: "Palanpur", emoji: "🏙️" },
+                  { slug: "palanpur-to-delhi", from: "Palanpur", to: "Delhi", emoji: "🏛️" },
+                  { slug: "ahmedabad-to-mumbai", from: "Ahmedabad", to: "Mumbai", emoji: "🌊" },
+                  { slug: "palanpur-to-srinagar-kashmir", from: "Palanpur", to: "Kashmir", emoji: "🏔️" },
+                  { slug: "vadodara-to-mumbai", from: "Vadodara", to: "Mumbai", emoji: "🌊" },
+                  { slug: "palanpur-to-kerala", from: "Palanpur", to: "Kerala", emoji: "🌴" },
+                  { slug: "surat-to-mumbai", from: "Surat", to: "Mumbai", emoji: "💎" },
+                  { slug: "palanpur-to-ambaji", from: "Palanpur", to: "Ambaji", emoji: "🛕" },
+                  { slug: "palanpur-to-mount-abu", from: "Palanpur", to: "Mount Abu", emoji: "⛰️" },
+                ].map((route) => (
+                  <a
+                    key={route.slug}
+                    href={`/routes/${route.slug}`}
+                    className="group inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 hover:shadow-soft shrink-0"
+                  >
+                    <span>{route.emoji}</span>
+                    <span className="whitespace-nowrap">
+                      {route.from} → {route.to}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

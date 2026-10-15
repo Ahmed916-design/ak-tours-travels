@@ -17,6 +17,9 @@ import FleetCard from "@/components/FleetCard";
 import RouteCard from "@/components/RouteCard";
 import ServiceCard from "@/components/ServiceCard";
 import ReviewCard from "@/components/ReviewCard";
+import CityCard from "@/components/CityCard";
+import TopRoutesSection from "@/components/TopRoutesSection";
+import PopularRoutesTabs from "@/components/PopularRoutesTabs";
 import InquirySection from "@/components/InquirySection";
 import {
   FLEET,
@@ -26,6 +29,7 @@ import {
   ALL_INDIA_DESTINATIONS,
   BUSINESS,
 } from "@/lib/constants";
+import { CITIES } from "@/lib/cities-data";
 import { ROUTES } from "@/lib/routes-data";
 
 const WHY_ICONS: Record<string, any> = {
@@ -136,6 +140,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* MOST POPULAR ROUTES — WITH TABS */}
+      <PopularRoutesTabs />
+
+      
+      {/* TOP LONG-DISTANCE ROUTES */}
+      <TopRoutesSection />
+
       {/* ALL INDIA TOUR */}
       <section className="section-cream">
         <div className="container-custom">
@@ -156,6 +167,38 @@ export default function HomePage() {
                 <span className="font-medium text-gray-800">{dest}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      
+      {/* CITIES WE SERVE */}
+      <section className="section bg-white">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="Cities We Serve"
+            title="Reliable Cab Service Across Gujarat"
+            subtitle="Palanpur, Ahmedabad, Deesa — and growing"
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {CITIES.map((city) => (
+              <CityCard
+                key={city.slug}
+                city={city}
+                image={
+                  {
+                    ahmedabad: "/images/destinations/ahmedabad.jpg",
+                    palanpur: "/images/destinations/palanpur.jpg",
+                    deesa: "/images/destinations/deesa.jpg",
+                  }[city.slug] || "/images/destinations/ahmedabad.jpg"
+                }
+              />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/cities" className="btn-secondary">
+              View All Cities <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

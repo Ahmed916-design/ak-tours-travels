@@ -192,7 +192,7 @@ export const WHY_US = [
 ] as const;
 
 export const SEO = {
-  siteUrl: "https://aktoursandtravels.com",
+  siteUrl: "https://ak-tours-travels.vercel.app",
   defaultTitle: "A K Tours and Travels | Best Cab Service in Palanpur, Gujarat",
   defaultDesc:
     "Book reliable cab service in Palanpur. Local rides, outstation, airport transfer & tour packages. Verified drivers, transparent pricing. Call +91 99793 57086",

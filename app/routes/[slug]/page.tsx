@@ -66,6 +66,20 @@ export default async function RouteDetailPage({
             <ArrowLeft className="h-4 w-4" /> All Routes
           </Link>
 
+        {/* Badges — Only for top routes */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {route.isTopRoute && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-3 py-1.5 text-xs font-bold text-white shadow-gold">
+                ⭐ Top Booked Route
+              </span>
+            )}
+            {route.multiDay && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-3 py-1.5 text-xs font-bold text-white shadow-premium">
+                🗓️ Multi-Day Tour
+              </span>
+            )}
+          </div>
+
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
             {route.from} to {route.to} Taxi
           </h1>
@@ -208,7 +222,7 @@ export default async function RouteDetailPage({
             {route.description}
           </p>
 
-          <h3 className="mt-8 text-xl font-bold text-gray-900">Highlights</h3>
+        <h3 className="mt-8 text-xl font-bold text-gray-900">Highlights</h3>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {route.highlights.map((h) => (
               <li key={h} className="flex gap-2 text-gray-700">
@@ -217,6 +231,37 @@ export default async function RouteDetailPage({
               </li>
             ))}
           </ul>
+
+          {/* Best Time to Visit — Only for top routes */}
+          {route.bestTimeToVisit && (
+            <div className="mt-8 rounded-2xl border border-gold-200 bg-gold-50 p-5">
+              <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <span className="text-gold-600">🌤️</span>
+                Best Time to Visit
+              </h3>
+              <p className="mt-2 text-gray-700 leading-relaxed">
+                {route.bestTimeToVisit}
+              </p>
+            </div>
+          )}
+
+          {/* What's Included — Only for top routes */}
+          {route.whatIncluded && route.whatIncluded.length > 0 && (
+            <div className="mt-8 rounded-2xl border border-primary-200 bg-primary-50 p-5">
+              <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <span className="text-primary-600">📦</span>
+                What's Included
+              </h3>
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                {route.whatIncluded.map((item) => (
+                  <li key={item} className="flex gap-2 text-gray-700">
+                    <CheckCircle2 className="h-5 w-5 text-primary-600 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 

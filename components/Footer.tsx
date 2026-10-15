@@ -1,10 +1,10 @@
 // components/Footer.tsx
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
   MapPin,
-  Car,
   MessageCircle,
   Clock,
   Star,
@@ -49,6 +49,13 @@ const POPULAR_ROUTES = [
   { href: "/routes/palanpur-to-udaipur", label: "Palanpur → Udaipur" },
   { href: "/routes/palanpur-to-dwarka", label: "Palanpur → Dwarka" },
   { href: "/routes/palanpur-to-rajasthan", label: "Palanpur → Rajasthan" },
+];
+
+const CITIES_LINKS = [
+  { href: "/cities/ahmedabad", label: "Ahmedabad" },
+  { href: "/cities/palanpur", label: "Palanpur" },
+  { href: "/cities/deesa", label: "Deesa" },
+  { href: "/cities", label: "All Cities" },
 ];
 
 const SERVICES = [
@@ -105,18 +112,32 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="relative container-custom py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: Brand */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        {/* Column 1: Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 shadow-premium transition-transform duration-300 group-hover:scale-105">
-                <Car className="h-6 w-6 text-white" />
+            <Link href="/" className="flex items-center gap-3 group">
+              {/* Square Logo Container — white bg for dark footer */}
+              <div className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-white overflow-hidden shrink-0 p-1.5 shadow-premium transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/images/logo/logo.png"
+                  alt={BUSINESS.name}
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-contain"
+                />
               </div>
+
+              {/* Text */}
               <div className="leading-tight">
                 <div className="font-display font-bold text-white text-base">
-                  {BUSINESS.name}
+                  A K Tours
                 </div>
-                <div className="text-xs text-gray-400">Palanpur, Gujarat</div>
+                <div className="text-[10px] font-semibold tracking-wider text-gold-400 uppercase">
+                  and Travels
+                </div>
+                <div className="text-[10px] text-gray-400 mt-0.5">
+                  Palanpur, Gujarat
+                </div>
               </div>
             </Link>
 
@@ -204,7 +225,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Popular Routes */}
+        {/* Column 3: Popular Routes */}
           <div>
             <h3 className="font-display font-bold text-white text-base">
               Popular Routes
@@ -225,7 +246,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact + Services */}
+          {/* Column 4: Cities */}
+          <div>
+            <h3 className="font-display font-bold text-white text-base">
+              Cities
+            </h3>
+            <div className="mt-2 h-0.5 w-10 bg-gradient-to-r from-gold-500 to-transparent" />
+            <ul className="mt-5 space-y-3 text-sm">
+              {CITIES_LINKS.map((city) => (
+                <li key={city.href}>
+                  <Link
+                    href={city.href}
+                    className="group inline-flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors"
+                  >
+                    <ArrowRight className="h-3 w-3 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                    {city.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Contact + Services */}
           <div>
             <h3 className="font-display font-bold text-white text-base">
               Get In Touch

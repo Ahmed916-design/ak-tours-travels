@@ -1,6 +1,7 @@
 // app/sitemap.ts
 import type { MetadataRoute } from "next";
 import { ROUTES } from "@/lib/routes-data";
+import { CITIES } from "@/lib/cities-data";
 import { SEO } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/fleet", priority: 0.9, changeFreq: "weekly" as const },
     { url: "/routes", priority: 0.9, changeFreq: "weekly" as const },
     { url: "/packages", priority: 0.9, changeFreq: "weekly" as const },
+    { url: "/cities", priority: 0.9, changeFreq: "weekly" as const },
     { url: "/about", priority: 0.7, changeFreq: "monthly" as const },
     { url: "/contact", priority: 0.8, changeFreq: "monthly" as const },
     { url: "/faq", priority: 0.6, changeFreq: "monthly" as const },
@@ -27,7 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFreq: "weekly" as const,
   }));
 
-  return [...staticPages, ...routePages].map((page) => ({
+  // Dynamic city pages
+  const cityPages = CITIES.map((city) => ({
+    url: `/cities/${city.slug}`,
+    priority: 0.85,
+    changeFreq: "weekly" as const,
+  }));
+
+  return [...staticPages, ...routePages, ...cityPages].map((page) => ({
     url: `${baseUrl}${page.url}`,
     lastModified: now,
     changeFrequency: page.changeFreq,
