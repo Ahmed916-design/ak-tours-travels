@@ -17,7 +17,7 @@ import { BUSINESS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About Us | A K Tours and Travels Palanpur",
   description:
-    "A K Tours and Travels is Palanpur's trusted cab service since 2015. Owned by Ammar Khorajiya. Serving local, outstation, airport transfers and tour packages.",
+    "A K Tours and Travels is India's Trusted Cab Service Since 2015. Owned by Ammar Khorajiya. Serving local, outstation, airport transfers and tour packages.",
 };
 
 export default function AboutPage() {
@@ -35,8 +35,8 @@ export default function AboutPage() {
         <div className="container-custom text-center">
           <SectionHeading
             eyebrow="About Us"
-            title="Palanpur's Trusted Cab Service Since 2015"
-            subtitle="Serving locals, tourists, and businesses with reliable, transparent, and comfortable rides"
+            title="India's Trusted Cab Service Since 2015"
+            subtitle="Serving Palanpur, Ahmedabad, and customers across India with reliable, transparent rides"
           />
         </div>
       </section>

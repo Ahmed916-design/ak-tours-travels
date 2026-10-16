@@ -51,8 +51,8 @@ export default function HomePage() {
         <div className="container-custom">
           <SectionHeading
             eyebrow="Why Choose Us"
-            title="Palanpur's Most Trusted Cab Service"
-            subtitle="Trusted by locals, preferred by tourists"
+            title="India's Trusted Cab Service Since 2015"
+            subtitle="From local rides to All India tours — trusted by 5000+ travelers"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {WHY_US.map((item) => {
@@ -151,9 +151,9 @@ export default function HomePage() {
       <section className="section-cream">
         <div className="container-custom">
           <SectionHeading
-            eyebrow="All India Tour Service"
-            title="Travel Anywhere in India"
-            subtitle="Delhi, Kashmir, Kerala, Rajasthan, Mumbai, Goa & more"
+            eyebrow="Why Choose Us"
+            title="India's Trusted Cab Service Since 2015"
+            subtitle="From local rides to All India tours — trusted by 5000+ travelers"
           />
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {ALL_INDIA_DESTINATIONS.map((dest) => (
@@ -347,7 +347,7 @@ export default function HomePage() {
 
         <div className="relative z-10 container-custom py-16 md:py-20 text-center">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold">
-            Ready to Book Your Cab?
+            Ready to Book Your Cab Anywhere in India?
           </h2>
           <p className="mt-4 text-primary-100 max-w-2xl mx-auto text-lg">
             Call or WhatsApp us — get instant confirmation. Available 24x7.

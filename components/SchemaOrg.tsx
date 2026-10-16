@@ -42,13 +42,21 @@ export default function SchemaOrg() {
         closes: "23:59",
       },
     ],
-    areaServed: [
+        areaServed: [
       { "@type": "City", name: "Palanpur" },
+      { "@type": "City", name: "Ahmedabad" },
+      { "@type": "City", name: "Gandhinagar" },
       { "@type": "City", name: "Deesa" },
+      { "@type": "City", name: "Mehsana" },
       { "@type": "City", name: "Chhapi" },
       { "@type": "City", name: "Vadgam" },
       { "@type": "City", name: "Danta" },
       { "@type": "City", name: "Ambaji" },
+      { "@type": "City", name: "Mount Abu" },
+      { "@type": "City", name: "Udaipur" },
+      { "@type": "City", name: "Mumbai" },
+      { "@type": "City", name: "Delhi" },
+      { "@type": "Country", name: "India" },
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

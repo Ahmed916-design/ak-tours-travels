@@ -75,7 +75,7 @@ export default function Header() {
       <div className="bg-primary-700 text-white text-sm">
         <div className="container-custom flex items-center justify-between py-2 gap-3">
           <span className="hidden sm:inline">
-            🚕 24x7 Cab Service in Palanpur
+            🚕 24x7 Cab Service | All India Tours Available
           </span>
           <div className="flex items-center gap-4">
             <a
@@ -125,7 +125,7 @@ export default function Header() {
               and Travels
             </div>
             <div className="text-[9px] md:text-[10px] text-gray-500 mt-0.5">
-              Palanpur, Gujarat
+              Trusted Across India
             </div>
           </div>
         </Link>

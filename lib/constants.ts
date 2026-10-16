@@ -4,7 +4,7 @@ export const BUSINESS = {
   name: "A K Tours and Travels",
   shortName: "A K Tours",
   owner: "Ammar Khorajiya",
-  tagline: "Palanpur's Most Trusted Cab Service",
+  tagline: "India's Trusted Cab Service",
   phone: "+919979357086",
   phone2: "+919925763146",
   phoneDisplay: "+91 99793 57086",
@@ -192,10 +192,10 @@ export const WHY_US = [
 ] as const;
 
 export const SEO = {
-  siteUrl: "https://ak-tours-travels.vercel.app",
-  defaultTitle: "A K Tours and Travels | Best Cab Service in Palanpur, Gujarat",
+  siteUrl: "https://ak-tours-travels.vercel.app/",
+  defaultTitle: "A K Tours and Travels | Trusted Cab Service Across India",
   defaultDesc:
-    "Book reliable cab service in Palanpur. Local rides, outstation, airport transfer & tour packages. Verified drivers, transparent pricing. Call +91 99793 57086",
+    "Book reliable cab service in Palanpur & Ahmedabad. Local rides, outstation, airport transfer & All India tour packages. Verified drivers, transparent pricing. Call +91 99793 57086",
   keywords: [
     "cab service in Palanpur",
     "taxi in Palanpur",

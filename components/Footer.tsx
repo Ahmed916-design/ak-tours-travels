@@ -119,7 +119,7 @@ export default function Footer() {
               {/* Square Logo Container — white bg for dark footer */}
               <div className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-white overflow-hidden shrink-0 p-1.5 shadow-premium transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/images/logo/logo.png"
+                  src="/images/logo/logo-2.png"
                   alt={BUSINESS.name}
                   width={64}
                   height={64}
@@ -136,15 +136,15 @@ export default function Footer() {
                   and Travels
                 </div>
                 <div className="text-[10px] text-gray-400 mt-0.5">
-                  Palanpur, Gujarat
+                  Trusted Across India
                 </div>
               </div>
             </Link>
 
             <p className="mt-5 text-sm leading-relaxed text-gray-400">
-              Palanpur's most trusted cab service since {BUSINESS.established}.
-              Local rides, outstation trips, airport transfers, and All India
-              tour packages.
+              India's trusted cab service since {BUSINESS.established} — serving
+              Palanpur, Ahmedabad, and All India tours. Local rides, outstation
+              trips, airport transfers.
             </p>
 
             {/* Trust Badges */}
