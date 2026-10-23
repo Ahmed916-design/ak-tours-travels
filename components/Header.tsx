@@ -69,6 +69,18 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+    // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
       {/* Top Bar */}
@@ -240,7 +252,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden border-t border-gray-100 bg-white animate-fade-in">
+        <div className="lg:hidden absolute top-full left-0 right-0 max-h-[calc(100vh-105px)] overflow-y-auto border-t border-gray-100 bg-white animate-fade-in shadow-lg pb-10">
           <nav className="container-custom flex flex-col py-4">
             {NAV.map((item) => {
               if (item.categories) {

@@ -192,23 +192,42 @@ export default function Hero() {
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-gray-200 shrink-0" />
 
-            {/* Chips — Scrollable */}
-            <div className="flex-1 overflow-x-auto scrollbar-hide">
-              <div className="flex gap-2 min-w-max py-1">
+                        {/* Chips — Auto Sliding */}
+            <div className="flex-1 overflow-hidden relative">
+              {/* Fade effect on edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+              
+              <div className="flex gap-2 min-w-max py-1 animate-marquee">
                 {[
-                  { slug: "palanpur-to-mumbai", from: "Palanpur", to: "Mumbai", emoji: "🌊" },
-                  { slug: "ahmedabad-to-palanpur", from: "Ahmedabad", to: "Palanpur", emoji: "🏙️" },
-                  { slug: "palanpur-to-delhi", from: "Palanpur", to: "Delhi", emoji: "🏛️" },
-                  { slug: "ahmedabad-to-mumbai", from: "Ahmedabad", to: "Mumbai", emoji: "🌊" },
-                  { slug: "palanpur-to-srinagar-kashmir", from: "Palanpur", to: "Kashmir", emoji: "🏔️" },
-                  { slug: "vadodara-to-mumbai", from: "Vadodara", to: "Mumbai", emoji: "🌊" },
-                  { slug: "palanpur-to-kerala", from: "Palanpur", to: "Kerala", emoji: "🌴" },
-                  { slug: "surat-to-mumbai", from: "Surat", to: "Mumbai", emoji: "💎" },
-                  { slug: "palanpur-to-ambaji", from: "Palanpur", to: "Ambaji", emoji: "🛕" },
-                  { slug: "palanpur-to-mount-abu", from: "Palanpur", to: "Mount Abu", emoji: "⛰️" },
-                ].map((route) => (
+                  // Array ko 2 baar render kar rahe hain (seamless loop ke liye)
+                  ...([
+                    { slug: "palanpur-to-mumbai", from: "Palanpur", to: "Mumbai", emoji: "🌊" },
+                    { slug: "ahmedabad-to-palanpur", from: "Ahmedabad", to: "Palanpur", emoji: "🏙️" },
+                    { slug: "palanpur-to-delhi", from: "Palanpur", to: "Delhi", emoji: "🏛️" },
+                    { slug: "ahmedabad-to-mumbai", from: "Ahmedabad", to: "Mumbai", emoji: "🌊" },
+                    { slug: "palanpur-to-srinagar-kashmir", from: "Palanpur", to: "Kashmir", emoji: "🏔️" },
+                    { slug: "vadodara-to-mumbai", from: "Vadodara", to: "Mumbai", emoji: "🌊" },
+                    { slug: "palanpur-to-kerala", from: "Palanpur", to: "Kerala", emoji: "🌴" },
+                    { slug: "surat-to-mumbai", from: "Surat", to: "Mumbai", emoji: "💎" },
+                    { slug: "palanpur-to-ambaji", from: "Palanpur", to: "Ambaji", emoji: "🛕" },
+                    { slug: "palanpur-to-mount-abu", from: "Palanpur", to: "Mount Abu", emoji: "⛰️" },
+                  ]),
+                  ...([
+                    { slug: "palanpur-to-mumbai", from: "Palanpur", to: "Mumbai", emoji: "🌊" },
+                    { slug: "ahmedabad-to-palanpur", from: "Ahmedabad", to: "Palanpur", emoji: "🏙️" },
+                    { slug: "palanpur-to-delhi", from: "Palanpur", to: "Delhi", emoji: "🏛️" },
+                    { slug: "ahmedabad-to-mumbai", from: "Ahmedabad", to: "Mumbai", emoji: "🌊" },
+                    { slug: "palanpur-to-srinagar-kashmir", from: "Palanpur", to: "Kashmir", emoji: "🏔️" },
+                    { slug: "vadodara-to-mumbai", from: "Vadodara", to: "Mumbai", emoji: "🌊" },
+                    { slug: "palanpur-to-kerala", from: "Palanpur", to: "Kerala", emoji: "🌴" },
+                    { slug: "surat-to-mumbai", from: "Surat", to: "Mumbai", emoji: "💎" },
+                    { slug: "palanpur-to-ambaji", from: "Palanpur", to: "Ambaji", emoji: "🛕" },
+                    { slug: "palanpur-to-mount-abu", from: "Palanpur", to: "Mount Abu", emoji: "⛰️" },
+                  ])
+                ].map((route, index) => (
                   <a
-                    key={route.slug}
+                    key={`${route.slug}-${index}`}
                     href={`/routes/${route.slug}`}
                     className="group inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 hover:shadow-soft shrink-0"
                   >

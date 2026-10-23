@@ -549,30 +549,7 @@ export const ROUTES: RouteData[] = [
       "Drop at any location in Ahmedabad",
     ],
   },
-  {
-    slug: "ahmedabad-to-udaipur",
-    from: "Ahmedabad",
-    to: "Udaipur",
-    distance: 260,
-    duration: "4.5 hours",
-    image: "/images/destinations/udaipur.jpg",
-    description:
-      "Ahmedabad to Udaipur cab service — the City of Lakes. Visit Lake Pichola, City Palace, Jag Mandir, and Saheliyon Ki Bari. Perfect weekend getaway from Ahmedabad. Comfortable AC cars.",
-    highlights: ["Lake Pichola", "City Palace", "Jag Mandir", "Saheliyon Ki Bari", "Fateh Sagar Lake"],
-    metaTitle: "Ahmedabad to Udaipur Taxi | A K Tours and Travels",
-    metaDesc:
-      "Book Ahmedabad to Udaipur taxi at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
-    isTopRoute: true,
-    multiDay: false,
-    bestTimeToVisit: "October to March — pleasant weather for sightseeing. September-February for festivals.",
-    whatIncluded: [
-      "AC cab with experienced driver",
-      "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Ahmedabad",
-      "Drop at any location in Udaipur",
-    ],
-  },
+  
   {
     slug: "surat-to-mumbai",
     from: "Surat",
