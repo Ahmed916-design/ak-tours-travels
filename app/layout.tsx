@@ -8,6 +8,7 @@ import SchemaOrg from "@/components/SchemaOrg";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollTopButton from "@/components/ScrollTopButton";
 import { BUSINESS, SEO } from "@/lib/constants";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    icons: {
+  icons: {
     icon: [
       { url: "/icon-v3.png", type: "image/png" },
     ],
@@ -71,6 +72,25 @@ export default function RootLayout({
         <Footer />
         <FloatingWhatsApp />
         <ScrollTopButton />
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-RWQ3BV3CL5`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RWQ3BV3CL5', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );
