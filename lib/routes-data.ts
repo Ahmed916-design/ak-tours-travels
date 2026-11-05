@@ -11,11 +11,12 @@ export type RouteData = {
   highlights: string[];
   metaTitle: string;
   metaDesc: string;
-  // Optional fields for enhanced routes (top long-distance)
   isTopRoute?: boolean;
   bestTimeToVisit?: string;
   whatIncluded?: string[];
   multiDay?: boolean;
+  longContent?: string; // NAYA
+  faqs?: { q: string; a: string }[]; // NAYA
 };
 
 export const ROUTES: RouteData[] = [
@@ -191,22 +192,61 @@ export const ROUTES: RouteData[] = [
     duration: "12 hours",
     image: "/images/destinations/mumbai.jpg",
     description:
-      "Palanpur to Mumbai outstation cab. One-way or round-trip, comfortable overnight journey. Perfect for business trips, family visits, and airport drops.",
-    highlights: ["Mumbai City", "Airport Drop", "Overnight Trip", "Business Travel"],
-    metaTitle: "Palanpur to Mumbai Taxi | A K Tours and Travels",
-    metaDesc: "Palanpur to Mumbai cab service. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Traveling from Palanpur to Mumbai is now comfortable and hassle-free with A K Tours and Travels. Whether you are traveling for business, a family vacation, or catching a flight, our 24x7 outstation cab service ensures a smooth journey. We offer well-maintained AC cars including Toyota Innova Crysta, Maruti Ertiga, and Swift Dzire. Our experienced drivers know the best routes via the Ahmedabad-Mumbai highway, ensuring your safety and punctuality.",
+    highlights: [
+      "Doorstep pickup from anywhere in Palanpur",
+      "Experienced highway drivers",
+      "AC Sedans, SUVs & Innova available",
+      "Overnight comfortable journey",
+      "Toll & State Tax assistance"
+    ],
+    metaTitle: "Palanpur to Mumbai Cab Service | Book AC Taxi | A K Tours",
+    metaDesc:
+      "Book Palanpur to Mumbai taxi at the best rates. 24x7 outstation cab service with verified drivers, AC cars (Innova, Ertiga), and doorstep pickup. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "Year-round — Mumbai is a metro city with no specific season. Monsoon (Jun-Sep) offers scenic views but slower traffic.",
+    bestTimeToVisit: "Mumbai can be visited year-round. However, October to March offers the most pleasant weather for sightseeing. Avoid traveling during peak monsoon (July-August) due to heavy rains.",
     whatIncluded: [
-      "AC cab with experienced driver",
-      "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Palanpur",
-      "Drop at any location in Mumbai",
+      "AC cab with a professional, verified driver",
+      "Fuel charges included (No hidden charges)",
+      "One-way or round-trip options available",
+      "Doorstep pickup from Palanpur (Kanoder, Chhapi, etc.)",
+      "Drop at any location in Mumbai (Airport, Dadar, Andheri, etc.)",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Why Book a Cab from Palanpur to Mumbai?</h3>
+      <p>Palanpur to Mumbai is a long-distance route of approximately 720 km. While trains and buses are available, a private cab offers unmatched comfort, privacy, and flexibility. With A K Tours and Travels, you don't have to worry about changing trains or crowded buses. Our door-to-door service picks you up right from your home in Palanpur and drops you safely at your destination in Mumbai.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3">Our Fleet for Palanpur to Mumbai Route</h3>
+      <ul class="list-disc pl-6 space-y-2 mt-3">
+        <li><strong>Swift Dzire / Hyundai Aura (Sedan):</strong> Perfect for small families (up to 4 passengers) or business travelers.</li>
+        <li><strong>Maruti Ertiga (SUV):</strong> Ideal for families of 5-6 people with moderate luggage.</li>
+        <li><strong>Toyota Innova Crysta (Premium SUV):</strong> The best choice for long journeys. Offers maximum legroom and a premium feel.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">What is the fare for Palanpur to Mumbai Taxi?</h3>
+      <p>The fare depends on the car type, whether you choose a one-way or round-trip, and the total distance. We believe in 100% transparent pricing. Toll taxes, state taxes, and parking charges are extra at actuals, but our driver will provide you with all the receipts. Call us at <strong>+91 99793 57086</strong> for the most competitive quote today.</p>
+    `,
+    faqs: [
+      {
+        q: "How long does it take to travel from Palanpur to Mumbai by car?",
+        a: "The journey takes approximately 11 to 12 hours depending on traffic conditions and your halts. Our drivers plan the route efficiently to ensure a smooth ride.",
+      },
+      {
+        q: "Do you provide one-way cab service to Mumbai?",
+        a: "Yes, we offer both one-way and round-trip options. A one-way drop is highly cost-effective if you are not returning immediately.",
+      },
+      {
+        q: "Is it safe to travel overnight from Palanpur to Mumbai?",
+        a: "Absolutely. All our drivers are well-rested, highly experienced on highways, and we track every vehicle. Your safety is our top priority.",
+      },
+      {
+        q: "Are toll taxes and state taxes included in the fare?",
+        a: "Toll taxes, state border taxes, and parking are charged extra at actuals. The base fare covers the vehicle rent and driver allowance.",
+      }
+    ]
   },
-    {
+  {
     slug: "palanpur-to-delhi",
     from: "Palanpur",
     to: "Delhi",
@@ -214,22 +254,57 @@ export const ROUTES: RouteData[] = [
     duration: "16 hours",
     image: "/images/destinations/delhi.jpg",
     description:
-      "Palanpur to Delhi outstation cab. Long-distance comfortable journey with experienced drivers. One-way or round-trip available. Perfect for business, family, and tourist travel to the capital.",
-    highlights: ["Delhi City", "India Gate", "Red Fort", "Airport Drop"],
-    metaTitle: "Palanpur to Delhi Taxi | A K Tours and Travels",
-    metaDesc: "Palanpur to Delhi cab service. AC Innova, Mini Bus available. Call +91 99793 57086.",
+      "Traveling from Palanpur to Delhi for business, tourism, or a family event? A K Tours and Travels provides reliable, comfortable, and safe outstation cab services to the capital city. Covering approximately 950 km, our professional drivers ensure a smooth journey on the national highways. Choose from our premium fleet of AC cars including Toyota Innova Crysta and Maruti Ertiga. We offer both one-way drops and round-trip packages.",
+    highlights: [
+      "Experienced drivers for long highway routes",
+      "Doorstep pickup in Palanpur",
+      "AC Sedans, SUVs & Tempo available",
+      "Safe overnight journey",
+      "Transparent toll & tax billing"
+    ],
+    metaTitle: "Palanpur to Delhi Cab Service | Outstation Taxi | A K Tours",
+    metaDesc:
+      "Book Palanpur to Delhi taxi at the best price. 24x7 outstation cab with verified drivers, AC Innova & Ertiga. Doorstep pickup. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "October to March — pleasant weather. Avoid May-June (extreme heat) and monsoon traffic.",
+    bestTimeToVisit: "October to March is the best time to visit Delhi. The weather is pleasant for sightseeing. Avoid the peak summer months of May and June.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with an experienced highway driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Palanpur",
+      "One-way and round-trip options",
+      "Pickup from anywhere in Palanpur",
       "Drop at any location in Delhi NCR",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Why Choose Our Palanpur to Delhi Cab?</h3>
+      <p>Delhi is a major hub for business and tourism. Whether you are catching a flight from IGI Airport, attending a wedding, or visiting family, traveling by a private cab gives you the flexibility that trains and buses cannot offer. With A K Tours, your journey is completely door-to-door. You don't have to deal with the hassle of changing trains or carrying luggage in crowded stations.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Our Fleet for Long-Distance Travel</h3>
+      <p>For a 16-hour journey, comfort is the top priority. We recommend our <strong>Toyota Innova Crysta</strong> for maximum comfort and legroom. For smaller groups, the <strong>Maruti Ertiga</strong> is a highly economical and comfortable SUV. If you have a large family, we also offer <strong>Force Urbania</strong> (Mini Bus).</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Fare & Booking Details</h3>
+      <p>Our Palanpur to Delhi taxi fares are highly competitive. The fare includes the vehicle rent and driver allowance. Toll taxes, state permits, and parking are charged at actuals. For the best quote and to discuss round-trip discounts, call us directly at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How many hours does it take to reach Delhi from Palanpur?",
+        a: "It takes approximately 15 to 17 hours depending on traffic, weather, and your halts. We plan the journey with adequate rest stops for the driver.",
+      },
+      {
+        q: "Do you provide cabs for one-way drops to Delhi?",
+        a: "Yes, we provide one-way drop services. This is very cost-effective for customers who are not returning to Palanpur immediately.",
+      },
+      {
+        q: "Will the driver know the routes in Delhi?",
+        a: "Yes, our drivers are highly experienced with outstation routes and are familiar with major areas in Delhi NCR, including the airport and railway stations.",
+      },
+      {
+        q: "Are there any hidden charges?",
+        a: "No, we provide complete transparency. You will be informed about the estimated toll and state tax amount in advance before booking.",
+      },
+    ]
   },
- {
+  {
     slug: "palanpur-to-srinagar-kashmir",
     from: "Palanpur",
     to: "Srinagar (Kashmir)",
@@ -237,22 +312,55 @@ export const ROUTES: RouteData[] = [
     duration: "Multi-Day Tour",
     image: "/images/destinations/kashmir.jpg",
     description:
-      "All India tour service — Palanpur to Srinagar, Kashmir. Multi-day tour with comfortable AC vehicles. Fully customizable itinerary for families and groups. A dream destination for travelers.",
-    highlights: ["Dal Lake", "Mughal Gardens", "Gulmarg", "Pahalgam", "Sonmarg"],
-    metaTitle: "Palanpur to Kashmir Taxi | A K Tours and Travels",
+      "A trip to Kashmir is a dream for many. A K Tours and Travels makes this dream accessible with our customized multi-day All India tour packages. Starting from Palanpur, we take you on a memorable journey to Srinagar, Gulmarg, Pahalgam, and Sonmarg. We provide well-maintained AC vehicles (Innova Crysta and Force Urbania) and highly experienced drivers who know the mountain terrains perfectly. Enjoy a stress-free vacation with your family.",
+    highlights: [
+      "Customizable multi-day itinerary",
+      "Experienced hill-station drivers",
+      "Comfortable AC Innova & Urbania",
+      "Doorstep pickup from Palanpur",
+      "All India permit assistance"
+    ],
+    metaTitle: "Palanpur to Kashmir Tour Package | Cab Service | A K Tours",
     metaDesc:
-      "Palanpur to Srinagar Kashmir tour package. Multi-day trips, AC cars. Call +91 99793 57086.",
+      "Book Palanpur to Srinagar Kashmir cab tour. Multi-day family packages, AC Innova & Tempo Traveller. Safe mountain driving. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: true,
-    bestTimeToVisit: "April to October — pleasant weather, blooming gardens. Avoid December-February (heavy snowfall, road closures).",
+    bestTimeToVisit: "April to October is the best time for tourism. The weather is pleasant and gardens are in full bloom. If you love snow, visit between December and February.",
     whatIncluded: [
-      "AC cab with experienced driver",
-      "Fuel charges included",
-      "Customizable multi-day itinerary",
-      "Doorstep pickup from Palanpur",
-      "All-India permit assistance",
-      "Hotel recommendations on request",
+      "AC cab with an expert hill-driver",
+      "Fuel charges included for the entire trip",
+      "Flexible itinerary as per your schedule",
+      "Pickup and drop from your home in Palanpur",
+      "Assistance with local sightseeing routes",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Plan Your Dream Kashmir Trip with Us</h3>
+      <p>Traveling to Kashmir from Gujarat is a long journey, but with our private cab service, it becomes a beautiful road trip. You get to witness the changing landscapes—from the plains of Gujarat to the mountains of Jammu and the breathtaking valleys of Kashmir. Our multi-day packages are designed to be flexible. You can decide how many days you want to spend in Srinagar, Gulmarg, or Pahalgam.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Why Book a Cab Instead of a Tour Bus?</h3>
+      <p>A private cab gives you complete privacy and freedom. You don't have to wait for other tourists or stick to a rigid schedule. Our drivers act as your local guides, taking you to the best spots, whether it's the Dal Lake, Mughal Gardens, or the snowy slopes of Sonmarg. We recommend our <strong>Toyota Innova Crysta</strong> for the best mountain driving experience.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Booking & Customization</h3>
+      <p>Kashmir trips require careful planning. We help you design the perfect itinerary based on the number of days you have. All-India permits and toll taxes are handled by us (charged at actuals). To plan your custom Kashmir tour and get a special quote, call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How many days are required for a Palanpur to Kashmir trip?",
+        a: "We recommend a minimum of 7 to 10 days for the round trip from Palanpur, so you have enough time to rest and enjoy the local sightseeing in Kashmir.",
+      },
+      {
+        q: "Are your cars and drivers equipped for hilly terrain?",
+        a: "Absolutely. We only assign drivers who have years of experience driving in the Himalayas. Our vehicles are fully serviced and checked before such long trips.",
+      },
+      {
+        q: "Does the fare include hotels and food?",
+        a: "The cab fare covers the vehicle, fuel, and driver. Hotels, food, and entry tickets to tourist spots are not included, giving you the freedom to choose your own stays.",
+      },
+      {
+        q: "Can we customize the itinerary?",
+        a: "Yes, our multi-day tours are 100% customizable. Tell us which places you want to cover, and our team will plan the route accordingly.",
+      },
+    ]
   },
   {
     slug: "palanpur-to-kerala",
@@ -284,16 +392,60 @@ export const ROUTES: RouteData[] = [
     from: "Palanpur",
     to: "Rajasthan",
     distance: 500,
-    duration: "9 hours",
+    duration: "Multi-Day Tour",
     image: "/images/destinations/rajasthan.jpg",
     description:
-      "Complete Rajasthan tour from Palanpur. Cover Jaipur, Udaipur, Jodhpur, Jaisalmer, and Mount Abu with a customizable multi-day package.",
-    highlights: ["Jaipur", "Udaipur", "Jodhpur", "Jaisalmer"],
-    metaTitle: "Palanpur to Rajasthan Tour | A K Tours and Travels",
+      "Plan a complete Rajasthan tour with A K Tours and Travels. Starting from Palanpur, explore the majestic cities of Jaipur, Udaipur, Jodhpur, and Jaisalmer. We provide customized multi-day tour packages in AC vehicles like Toyota Innova Crysta and Force Urbania (Mini Bus) for large groups. Experience the royal heritage with our experienced drivers.",
+    highlights: [
+      "Customizable multi-day tour",
+      "Cover Jaipur, Udaipur, Jodhpur",
+      "AC Innova & Urbania available",
+      "Experienced tour drivers",
+      "Perfect for families & groups"
+    ],
+    metaTitle: "Palanpur to Rajasthan Tour Package | Multi-Day Cab | A K Tours",
     metaDesc:
-      "Palanpur to Rajasthan tour package. Customizable multi-day trips. Call +91 99793 57086.",
+      "Book Palanpur to Rajasthan tour package. Customizable multi-day trips to Jaipur, Udaipur, Jodhpur. AC cabs & Tempo. Call +91 99793 57086.",
+    isTopRoute: true,
+    multiDay: true,
+    bestTimeToVisit: "October to March is the peak tourist season in Rajasthan. The weather is ideal for exploring forts and palaces.",
+    whatIncluded: [
+      "AC cab with a professional driver",
+      "Fuel charges included for the entire itinerary",
+      "Flexible multi-day schedule",
+      "Doorstep pickup from Palanpur",
+      "Assistance with route planning",
+    ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Explore the Royal State of Rajasthan</h3>
+      <p>Rajasthan is a land of kings, offering a mix of grand forts, beautiful palaces, and vibrant deserts. Booking a private cab from Palanpur is the best way to explore this state at your own pace. Our multi-day packages are fully customizable. Whether you want to spend two days in Udaipur or three days in Jaipur, our driver will be with you throughout the journey.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Best Vehicles for Rajasthan Tours</h3>
+      <p>For families of 4-6 people, the <strong>Toyota Innova Crysta</strong> is the best choice, offering excellent comfort on Rajasthan highways. For larger groups or corporate tours, we highly recommend the <strong>Force Urbania</strong> Mini Bus, which provides a luxurious, bus-like experience.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Customize Your Tour</h3>
+      <p>We don't sell fixed packages; we build them around your needs. Tell us your travel dates, budget, and preferred destinations. Call us at <strong>+91 99793 57086</strong> to design your dream Rajasthan vacation.</p>
+    `,
+    faqs: [
+      {
+        q: "What is the minimum duration for a Rajasthan tour from Palanpur?",
+        a: "We recommend at least a 4 to 5-day tour to comfortably cover cities like Jaipur, Jodhpur, and Udaipur.",
+      },
+      {
+        q: "Does the tour package include hotels?",
+        a: "Our cab package covers the vehicle, fuel, and driver. Hotels are not included, but we can recommend trusted hotels for your stay.",
+      },
+      {
+        q: "Can we book a Tempo Traveller or Urbania?",
+        a: "Yes, we have Force Urbania Mini Buses available for large families and group tours.",
+      },
+      {
+        q: "Are tolls and state taxes included in the multi-day fare?",
+        a: "Tolls, parking, and interstate permits for Rajasthan are extra at actuals. We provide an estimate before you book.",
+      },
+    ]
   },
-    // ============ AHMEDABAD ROUTES ============
+  // ============ AHMEDABAD ROUTES ============
   {
     slug: "ahmedabad-to-palanpur",
     from: "Ahmedabad",
@@ -302,11 +454,54 @@ export const ROUTES: RouteData[] = [
     duration: "2.5 hours",
     image: "/images/destinations/ahmedabad.jpg",
     description:
-      "Reliable cab service from Ahmedabad to Palanpur. Comfortable AC cars, experienced drivers, and 24x7 availability. Perfect for business trips, family visits, and airport transfers.",
-    highlights: ["Palanpur City", "Kanoder", "Banaskantha District", "On-Time Drop"],
-    metaTitle: "Ahmedabad to Palanpur Taxi | A K Tours and Travels",
+      "Need a quick and reliable cab from Ahmedabad to Palanpur? A K Tours and Travels specializes in this route. Whether you are arriving at Ahmedabad Airport, Railway Station, or traveling from the city for a family function in Palanpur, we provide on-time pickup and safe drop. Enjoy a smooth 2.5-hour drive on the highway in our clean AC cars with professional drivers.",
+    highlights: [
+      "24x7 Airport & Railway pickup",
+      "Clean AC Sedans & SUVs",
+      "On-time guaranteed service",
+      "Experienced highway drivers",
+      "Best rates for Ahmedabad-Palanpur"
+    ],
+    metaTitle: "Ahmedabad to Palanpur Cab | Airport Taxi | A K Tours",
     metaDesc:
-      "Book Ahmedabad to Palanpur taxi at best price. AC cars, verified drivers, 24x7. Call +91 99793 57086.",
+      "Book Ahmedabad to Palanpur taxi at best rates. 24x7 airport and railway pickup. Clean AC cars, verified drivers. Call +91 99793 57086.",
+    isTopRoute: true,
+    multiDay: false,
+    bestTimeToVisit: "This is an all-year route. It is highly popular for business travel and family visits.",
+    whatIncluded: [
+      "AC cab with a professional driver",
+      "Fuel and highway charges included",
+      "Pickup from Ahmedabad Airport or any location in the city",
+      "Drop at Kanoder, Palanpur, or anywhere in Palanpur",
+    ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Ahmedabad to Palanpur Cab Service - Reliable & Fast</h3>
+      <p>The route from Ahmedabad to Palanpur is one of the most busy routes for us. We frequently serve passengers arriving at Sardar Vallabhbhai Patel International Airport who need to reach Palanpur. Our drivers track your flight status. Even if your flight is delayed, our cab will be waiting for you at the airport.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Airport Pickup & Railway Station Pickup</h3>
+      <p>We provide meet-and-greet services at the Ahmedabad Airport. For railway passengers arriving at Kalupur or Gandhigram station, we ensure the driver is waiting at the designated pickup point. You don't have to haggle with local taxi drivers; book with us in advance for a fixed, transparent price.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Best Cars for This Route</h3>
+      <p>For a 2.5-hour journey, our <strong>Swift Dzire</strong> or <strong>Hyundai Aura</strong> are the most popular choices for small families and executives. If you have extra luggage, the <strong>Maruti Ertiga</strong> or <strong>Toyota Innova</strong> is perfect. To book your Ahmedabad to Palanpur drop, call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How much time does it take from Ahmedabad to Palanpur?",
+        a: "It usually takes 2.5 to 3 hours depending on traffic while exiting Ahmedabad city and your exact drop location in Palanpur.",
+      },
+      {
+        q: "Do you offer pickups from Ahmedabad Airport late at night?",
+        a: "Yes, we operate 24x7. Our drivers are available for late-night and early-morning airport pickups.",
+      },
+      {
+        q: "What is the luggage capacity of your cabs?",
+        a: "A sedan can comfortably carry 2 large bags and 1 small bag. For more luggage, we recommend upgrading to an Ertiga or Innova.",
+      },
+      {
+        q: "Are there any extra charges for airport pickup?",
+        a: "We charge a nominal airport entry fee as per the actual government rates, which we inform you about in advance.",
+      },
+    ]
   },
   {
     slug: "ahmedabad-to-mount-abu",
@@ -450,7 +645,7 @@ export const ROUTES: RouteData[] = [
     metaDesc:
       "Book Deesa to Mount Abu cab at best rates. AC cars available. Call +91 99793 57086.",
   },
-   // ============ NEW OUTSTATION ROUTES ============
+  // ============ NEW OUTSTATION ROUTES ============
   {
     slug: "palanpur-to-jaipur",
     from: "Palanpur",
@@ -459,21 +654,52 @@ export const ROUTES: RouteData[] = [
     duration: "9 hours",
     image: "/images/destinations/jaipur.jpg",
     description:
-      "Palanpur to Jaipur cab service — the Pink City of India. Visit Amber Fort, Hawa Mahal, City Palace, and Jantar Mantar. Perfect for Rajasthan tour and weekend trips. Comfortable AC cars with experienced drivers.",
-    highlights: ["Amber Fort", "Hawa Mahal", "City Palace", "Jantar Mantar", "Nahargarh Fort"],
-    metaTitle: "Palanpur to Jaipur Taxi | A K Tours and Travels",
+      "Explore the Pink City with A K Tours and Travels. Book a comfortable AC cab from Palanpur to Jaipur for your family vacation or business trip. We cover the 550 km distance in approximately 9 hours. Visit the iconic Amber Fort, Hawa Mahal, and City Palace. Our experienced drivers ensure a safe journey through the Rajasthan highways.",
+    highlights: [
+      "Tourist friendly cab service",
+      "Visit Amber Fort, Hawa Mahal",
+      "Comfortable AC SUV & Innova",
+      "Doorstep pickup from Palanpur",
+      "Safe and scenic drive"
+    ],
+    metaTitle: "Palanpur to Jaipur Taxi | Rajasthan Tour Cab | A K Tours",
     metaDesc:
-      "Book Palanpur to Jaipur taxi at best rates. AC cars, experienced drivers, 24x7. Call +91 99793 57086.",
+      "Book Palanpur to Jaipur cab at best rates. 24x7 outstation taxi for Rajasthan tour. AC Innova, Ertiga available. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "October to March — pleasant weather for sightseeing. Avoid May-June (extreme heat).",
+    bestTimeToVisit: "October to March is the best time to visit Jaipur. The weather is cool and pleasant for sightseeing.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with an experienced driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Palanpur",
-      "Drop at any location in Jaipur",
+      "One-way drop or round-trip",
+      "Pickup from Kanoder, Palanpur, or nearby areas",
+      "Drop at your hotel or any location in Jaipur",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Palanpur to Jaipur - Your Gateway to Rajasthan</h3>
+      <p>Jaipur, the capital of Rajasthan, is famous for its rich history, forts, and vibrant culture. A road trip from Palanpur to Jaipur is a beautiful experience. We offer well-maintained vehicles like the <strong>Maruti Ertiga</strong> and <strong>Toyota Innova Crysta</strong> for your family. Our drivers are familiar with the Rajasthan routes and can also act as your local guides for places like Amber Fort and Jal Mahal.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Plan Your Rajasthan Tour</h3>
+      <p>Many customers book this cab for a one-way drop to Jaipur and then continue their Rajasthan tour to Udaipur or Jodhpur. We also offer multi-day round-trip packages. To customize your Rajasthan itinerary and get a special tour rate, call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "What is the distance and time from Palanpur to Jaipur?",
+        a: "The distance is approximately 550 km, and the journey takes about 8.5 to 9 hours.",
+      },
+      {
+        q: "Can I book this cab for a round trip?",
+        a: "Yes, we offer very competitive round-trip packages for Jaipur. You can keep the cab with you for 2-3 days for local sightseeing.",
+      },
+      {
+        q: "Which car is best for this route?",
+        a: "An Innova Crysta or Ertiga is highly recommended for the highway journey, providing good comfort for your family.",
+      },
+      {
+        q: "Are toll taxes and parking included?",
+        a: "Toll taxes and state border taxes are extra. Parking fees at monuments are also to be paid by the customer.",
+      },
+    ]
   },
 
   // ============ LOCAL & SHORT TRIPS ============
@@ -485,21 +711,55 @@ export const ROUTES: RouteData[] = [
     duration: "8 hours",
     image: "/images/destinations/mumbai.jpg",
     description:
-      "Ahmedabad to Mumbai cab service — reliable outstation trip between Gujarat's business capital and India's financial capital. Perfect for business trips, airport drops, and family visits. Comfortable AC cars with experienced drivers.",
-    highlights: ["Mumbai City", "Airport Drop", "Business Travel", "Overnight Trip"],
-    metaTitle: "Ahmedabad to Mumbai Taxi | A K Tours and Travels",
+      "Traveling from Ahmedabad to Mumbai is now fast and comfortable with A K Tours and Travels. Whether you are heading to the financial capital for a business meeting, catching a flight, or visiting family, our outstation cab service ensures a smooth journey. We take the Ahmedabad-Mumbai Expressway and use premium vehicles like Toyota Innova Crysta and Maruti Ertiga to make your 8-hour journey relaxing.",
+    highlights: [
+      "Fast travel via Expressway",
+      "AC Sedans, SUVs & Innova",
+      "Corporate & Business travel",
+      "Doorstep pickup in Ahmedabad",
+      "Safe overnight journey"
+    ],
+    metaTitle: "Ahmedabad to Mumbai Cab Service | Expressway Taxi | A K Tours",
     metaDesc:
-      "Book Ahmedabad to Mumbai cab at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Book Ahmedabad to Mumbai taxi at best rates. 24x7 outstation cab via Expressway. AC cars, verified drivers, and doorstep pickup. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "Year-round — Mumbai is a metro city. Monsoon (Jun-Sep) offers scenic views but slower traffic.",
+    bestTimeToVisit: "This is an all-year route, highly popular for business travel. The Expressway is excellent for driving year-round.",
     whatIncluded: [
-      "AC cab with experienced driver",
-      "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Ahmedabad",
-      "Drop at any location in Mumbai",
+      "AC cab with an experienced Expressway driver",
+      "Fuel and Expressway tolls (at actuals)",
+      "One-way and round-trip options",
+      "Pickup from any area in Ahmedabad (SG Highway, Bopal, etc.)",
+      "Drop at any location in Mumbai or Navi Mumbai",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Ahmedabad to Mumbai Cab Service - Fast & Reliable</h3>
+      <p>The route from Ahmedabad to Mumbai is one of the busiest corporate routes in India. Thanks to the Ahmedabad-Mumbai Expressway, the journey is now much faster and smoother. We specialize in providing comfortable, AC cabs for business executives and families alike. Our drivers are well-versed with the Expressway routes and ensure a safe, timely drop.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">One-Way Drop & Round-Trip Options</h3>
+      <p>Many customers need a one-way drop to Mumbai for business or to catch a flight at Chhatrapati Shivaji Maharaj International Airport. We offer highly competitive one-way rates. For those returning to Ahmedabad, we offer discounted round-trip packages.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Booking Your Ride</h3>
+      <p>To ensure a comfortable journey, we recommend the <strong>Toyota Innova Crysta</strong> or <strong>Maruti Ertiga</strong>. For solo travelers or small families, our <strong>Swift Dzire</strong> is the most economical choice. Call us at <strong>+91 99793 57086</strong> to book your ride.</p>
+    `,
+    faqs: [
+      {
+        q: "How long does it take from Ahmedabad to Mumbai by cab?",
+        a: "It takes approximately 7.5 to 8.5 hours via the Expressway, depending on traffic conditions while entering Mumbai city.",
+      },
+      {
+        q: "Do you provide airport drops in Mumbai from Ahmedabad?",
+        a: "Yes, we provide direct drops to Mumbai Airport (T1 and T2). Just inform us while booking so we can plan the route accordingly.",
+      },
+      {
+        q: "What are the toll charges on this route?",
+        a: "Toll charges on the Expressway are extra and charged at actuals. You can pay them directly or we can include them in your estimated quote.",
+      },
+      {
+        q: "Is it safe for a family to travel at night?",
+        a: "Yes, our drivers are highly experienced, and the Expressway is well-lit and safe for overnight journeys.",
+      },
+    ]
   },
   {
     slug: "vadodara-to-mumbai",
@@ -509,21 +769,55 @@ export const ROUTES: RouteData[] = [
     duration: "7 hours",
     image: "/images/destinations/mumbai.jpg",
     description:
-      "Vadodara to Mumbai cab service — reliable outstation trip from Gujarat's cultural capital to Mumbai. Perfect for business trips, airport drops, and family visits. AC cars with professional drivers.",
-    highlights: ["Mumbai City", "Airport Drop", "Business Travel", "Expressway Route"],
-    metaTitle: "Vadodara to Mumbai Taxi | A K Tours and Travels",
+      "Book a reliable cab from Vadodara to Mumbai with A K Tours and Travels. Whether you are a corporate professional traveling to Mumbai for work, or a family catching a flight, our AC outstation cabs offer maximum comfort. We cover the 420 km distance via the Vadodara-Mumbai Expressway in approximately 7 hours. Choose from our fleet of Innova Crysta, Ertiga, and Dzire.",
+    highlights: [
+      "Smooth Expressway journey",
+      "Corporate travel specialists",
+      "Clean AC Cars",
+      "On-time pickup from Vadodara",
+      "Drop at Mumbai Airport or City"
+    ],
+    metaTitle: "Vadodara to Mumbai Cab | Outstation Taxi Service | A K Tours",
     metaDesc:
-      "Book Vadodara to Mumbai cab at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Book Vadodara to Mumbai cab at best rates. 24x7 outstation taxi with verified drivers. AC cars, doorstep pickup. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "Year-round — Mumbai is a metro city. Best weather: October to March.",
+    bestTimeToVisit: "Year-round travel is comfortable. The Expressway makes the journey smooth in all seasons.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with a professional driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Vadodara",
-      "Drop at any location in Mumbai",
+      "One-way drop or round-trip",
+      "Pickup from your location in Vadodara",
+      "Drop anywhere in Mumbai, Navi Mumbai, or Thane",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Comfortable Vadodara to Mumbai Outstation Cab</h3>
+      <p>Vadodara, known as the cultural capital of Gujarat, has strong business and family ties with Mumbai. Our Vadodara to Mumbai cab service is designed for maximum comfort. Instead of navigating crowded trains or dealing with bus delays, you can relax in our clean AC cars and let our professional drivers handle the Expressway traffic.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Airport & Railway Station Drops</h3>
+      <p>A large number of our customers book this route to catch early morning or late-night flights from Mumbai Airport. We track your flight timings and ensure you reach the terminal on time. We also drop passengers at Dadar, Andheri, Borivali, and other major railway stations in Mumbai.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Fare & Booking</h3>
+      <p>Our rates are highly competitive. Toll taxes and state border taxes are extra at actuals. For the best quote on a one-way drop or a round-trip, call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How many hours from Vadodara to Mumbai by cab?",
+        a: "It takes around 6 to 7 hours depending on traffic near the Mumbai entry points like Vashi or Dahisar.",
+      },
+      {
+        q: "Can I book an Innova for this route?",
+        a: "Yes, we have Toyota Innova Crysta available. It is highly recommended for this 7-hour journey for extra comfort and luggage space.",
+      },
+      {
+        q: "Are there any night charges for traveling?",
+        a: "A nominal night charge may apply if your pickup is between 10 PM and 6 AM. This will be communicated clearly upfront.",
+      },
+      {
+        q: "Do you provide one-way cabs to Mumbai?",
+        a: "Yes, one-way drop is our most popular service for this route, saving you the cost of a round trip.",
+      },
+    ]
   },
   {
     slug: "mumbai-to-ahmedabad",
@@ -533,23 +827,57 @@ export const ROUTES: RouteData[] = [
     duration: "8 hours",
     image: "/images/destinations/ahmedabad.jpg",
     description:
-      "Mumbai to Ahmedabad cab service — reliable outstation trip. Perfect for business travel, family visits, and Gujarat tours. Comfortable AC cars with experienced drivers, available 24x7.",
-    highlights: ["Ahmedabad City", "Sabarmati Riverfront", "Business Travel", "Expressway Route"],
-    metaTitle: "Mumbai to Ahmedabad Taxi | A K Tours and Travels",
+      "Traveling from Mumbai to Ahmedabad? A K Tours and Travels provides reliable and comfortable outstation cab services on this busy route. Whether you are returning home, traveling for business, or visiting family, our AC cabs (Innova Crysta, Ertiga, Dzire) ensure a smooth journey via the Mumbai-Ahmedabad Expressway. Book with us for on-time pickup from anywhere in Mumbai and a safe drop in Ahmedabad.",
+    highlights: [
+      "On-time pickup from Mumbai (Airport, Railway, City)",
+      "Smooth Expressway journey",
+      "AC Sedans, SUVs & Innova available",
+      "Safe and secure travel",
+      "Drop at any location in Ahmedabad"
+    ],
+    metaTitle: "Mumbai to Ahmedabad Cab Service | Expressway Taxi | A K Tours",
     metaDesc:
-      "Book Mumbai to Ahmedabad cab at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Book Mumbai to Ahmedabad taxi at best rates. 24x7 outstation cab service. AC cars, verified drivers, Expressway route. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "Year-round — October to March offers the best weather for both cities.",
+    bestTimeToVisit: "This is a year-round business and family route. The Expressway ensures a smooth journey in all seasons.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with an experienced driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Mumbai",
-      "Drop at any location in Ahmedabad",
+      "One-way drop or round-trip",
+      "Pickup from Mumbai Airport, Dadar, Andheri, or any location",
+      "Drop at SG Highway, Bopal, or anywhere in Ahmedabad",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Mumbai to Ahmedabad Outstation Cab</h3>
+      <p>Our Mumbai to Ahmedabad cab service is designed for maximum comfort and reliability. We understand that after a long flight or train journey to Mumbai, you want a hassle-free ride home. Our drivers provide meet-and-greet services at the airport and railway stations. The drive via the Expressway is scenic and fast, taking about 8 hours.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Choose the Right Car for Your Journey</h3>
+      <p>If you are traveling solo or with one passenger, our <strong>Swift Dzire</strong> is the most economical choice. Families traveling with luggage should opt for the <strong>Maruti Ertiga</strong> or the premium <strong>Toyota Innova Crysta</strong> for maximum legroom. We also provide <strong>Force Urbania Mini Bus</strong> for large groups.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Transparent Pricing</h3>
+      <p>We offer competitive one-way and round-trip fares. Toll taxes and state permits are extra at actuals. To get an exact quote for your Mumbai to Ahmedabad trip, call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How long does it take from Mumbai to Ahmedabad?",
+        a: "It takes approximately 8 hours via the Expressway, depending on the traffic while exiting Mumbai.",
+      },
+      {
+        q: "Can I book a cab from Mumbai Airport to Ahmedabad?",
+        a: "Yes, we specialize in airport pickups. Our driver will be waiting for you at the arrival terminal with a name placard.",
+      },
+      {
+        q: "Are toll charges included?",
+        a: "Toll charges are not included in the base fare and are to be paid at actuals. Receipts will be provided by the driver.",
+      },
+      {
+        q: "Do you provide child seats?",
+        a: "We can arrange a child seat upon special request. Please inform us at least 24 hours before your pickup.",
+      },
+    ]
   },
-  
+
   {
     slug: "surat-to-mumbai",
     from: "Surat",
@@ -558,21 +886,55 @@ export const ROUTES: RouteData[] = [
     duration: "4.5 hours",
     image: "/images/destinations/mumbai.jpg",
     description:
-      "Surat to Mumbai cab service — reliable outstation trip from the Diamond City to Mumbai. Perfect for business trips, airport drops, and family visits. Comfortable AC cars with experienced drivers.",
-    highlights: ["Mumbai City", "Airport Drop", "Business Travel", "Expressway Route"],
-    metaTitle: "Surat to Mumbai Taxi | A K Tours and Travels",
+      "Surat to Mumbai is a highly active route for business professionals, especially those in the textile and diamond industries. A K Tours and Travels provides fast, secure, and comfortable cab services from Surat to Mumbai. We cover the 280 km distance in just about 4.5 hours. Travel in our sanitized AC cars with experienced drivers who know the best routes to avoid city traffic in Mumbai.",
+    highlights: [
+      "Fast 4.5-hour journey",
+      "Business class comfort",
+      "AC Sedans & SUVs",
+      "Secure & safe travel",
+      "Doorstep pickup in Surat"
+    ],
+    metaTitle: "Surat to Mumbai Cab Service | Fast Outstation Taxi | A K Tours",
     metaDesc:
-      "Book Surat to Mumbai cab at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Book Surat to Mumbai cab at affordable rates. Fast 4.5-hour journey, AC cars, verified drivers. 24x7 service. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "Year-round — Mumbai is a metro city. Best weather: October to March.",
+    bestTimeToVisit: "This route is ideal for travel throughout the year, especially for business trips.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with an expert driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Surat",
-      "Drop at any location in Mumbai",
+      "One-way drop or round-trip",
+      "Pickup from anywhere in Surat",
+      "Drop at Mumbai Airport, Railway Station, or home",
     ],
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Fast & Secure Surat to Mumbai Cab</h3>
+      <p>Surat is a bustling business hub, and Mumbai is the financial capital. We understand that time is money for business travelers. Our Surat to Mumbai cab service is optimized for speed and comfort. We use well-maintained vehicles and highly experienced drivers who know how to navigate the highway and the busy Mumbai entry points efficiently.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Why Choose A K Tours for this Route?</h3>
+      <p>We offer clean, AC cars that are perfect for a quick business trip. You can work on the go or relax before your meeting. Our drivers are polite, professionally dressed, and maintain strict punctuality. We also offer reliable drops to Mumbai Airport for travelers flying out.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Booking Details</h3>
+      <p>Our fares are transparent, covering vehicle rent and driver allowance. Toll taxes are extra. For corporate accounts or regular monthly bookings on this route, please call us directly at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "What is the distance and time from Surat to Mumbai?",
+        a: "The distance is approximately 280 km, and it takes about 4.5 to 5 hours depending on Mumbai's local traffic.",
+      },
+      {
+        q: "Do you offer corporate packages for this route?",
+        a: "Yes, we offer special packages for companies and regular business travelers. Contact us for a customized corporate quote.",
+      },
+      {
+        q: "Are the toll taxes included in the fare?",
+        a: "No, toll taxes and state border taxes are charged extra at actuals. You will receive receipts for all toll payments.",
+      },
+      {
+        q: "Can I get a sedan for a solo business trip?",
+        a: "Yes, our Swift Dzire or Hyundai Aura are perfect for solo travelers or small groups of up to 3 people.",
+      },
+    ]
   },
   {
     slug: "mumbai-to-surat",
@@ -582,22 +944,53 @@ export const ROUTES: RouteData[] = [
     duration: "4.5 hours",
     image: "/images/destinations/surat.jpg",
     description:
-      "Mumbai to Surat cab service — reliable outstation trip to the Diamond City of India. Perfect for business travel, family visits, and Gujarat tours. AC cars with experienced drivers.",
-    highlights: ["Surat City", "Diamond Market", "Textile Market", "Business Travel"],
-    metaTitle: "Mumbai to Surat Taxi | A K Tours and Travels",
+      "Book a fast and secure cab from Mumbai to Surat with A K Tours and Travels. Ideal for business travelers in the textile and diamond industries, or families heading home. We cover the 280 km distance in about 4.5 hours via the Mumbai-Surat highway. Our professional drivers ensure a safe journey in well-maintained AC cars.",
+    highlights: [
+      "Fast 4.5-hour drive",
+      "Ideal for business travelers",
+      "Pickup from Mumbai Airport or City",
+      "Clean AC Cars",
+      "Experienced highway drivers"
+    ],
+    metaTitle: "Mumbai to Surat Cab | Fast Outstation Taxi | A K Tours",
     metaDesc:
-      "Book Mumbai to Surat cab at best rates. AC cars, experienced drivers. Call +91 99793 57086.",
+      "Book Mumbai to Surat cab at affordable rates. 24x7 service, AC cars, verified drivers. Fast highway travel. Call +91 99793 57086.",
     isTopRoute: true,
     multiDay: false,
-    bestTimeToVisit: "October to March — pleasant weather. Year-round business travel possible.",
+    bestTimeToVisit: "Year-round travel is comfortable on this highway route.",
     whatIncluded: [
-      "AC cab with experienced driver",
+      "AC cab with a professional driver",
       "Fuel charges included",
-      "One-way or round-trip options",
-      "Doorstep pickup from Mumbai",
+      "One-way drop",
+      "Doorstep pickup from any area in Mumbai",
       "Drop at any location in Surat",
     ],
-  }, 
+    longContent: `
+      <h3 class="text-xl font-bold mt-6 mb-3">Quick and Comfortable Mumbai to Surat Cab</h3>
+      <p>Surat is a booming business hub, and many professionals travel between Mumbai and Surat regularly. Our cab service is designed to save your time while providing maximum comfort. We use premium highway cars like the <strong>Toyota Innova Crysta</strong> and <strong>Swift Dzire</strong> for this route. You can relax or work during the journey while our expert driver handles the highway traffic.</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3">Airport & Station Drops</h3>
+      <p>If you have a late-night flight from Mumbai Airport, we ensure our driver is there at the right time. Similarly, we provide on-time drops at Surat Railway Station and Surat Airport. Booking is simple: just call us at <strong>+91 99793 57086</strong>.</p>
+    `,
+    faqs: [
+      {
+        q: "How much time does it take from Mumbai to Surat?",
+        a: "It usually takes 4.5 to 5 hours depending on traffic while leaving Mumbai.",
+      },
+      {
+        q: "What is the best car for this route?",
+        a: "The Toyota Innova Crysta is highly recommended for this journey due to its superior comfort and suspension on the highway.",
+      },
+      {
+        q: "Are state taxes included?",
+        a: "State border taxes (if applicable) and tolls are charged extra at actuals.",
+      },
+      {
+        q: "Do you offer a one-way drop to Surat?",
+        a: "Yes, a one-way drop is our most popular option for this route, as it saves you money.",
+      },
+    ]
+  },
 ];
 
 export function getRouteBySlug(slug: string) {

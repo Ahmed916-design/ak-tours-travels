@@ -222,7 +222,15 @@ export default async function RouteDetailPage({
             {route.description}
           </p>
 
-        <h3 className="mt-8 text-xl font-bold text-gray-900">Highlights</h3>
+          {/* NAYA: Long Content Render */}
+          {route.longContent && (
+            <div 
+              className="mt-4 text-gray-700 leading-relaxed" 
+              dangerouslySetInnerHTML={{ __html: route.longContent }} 
+            />
+          )}
+
+          <h3 className="mt-8 text-xl font-bold text-gray-900">Highlights</h3>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {route.highlights.map((h) => (
               <li key={h} className="flex gap-2 text-gray-700">
@@ -287,24 +295,24 @@ export default async function RouteDetailPage({
             title={`${route.from} to ${route.to} — Common Questions`}
           />
           <div className="mt-10 space-y-4">
-            {[
+                        {(route.faqs || [
               {
                 q: `How long does it take from ${route.from} to ${route.to}?`,
                 a: `Approximately ${route.duration} (about ${route.distance} km).`,
               },
               {
                 q: `What is the fare for ${route.from} to ${route.to} taxi?`,
-                a: `Pricing depends on the car type, trip type (one-way/round-trip), and season. Call us at ${BUSINESS.phoneDisplay} or ${BUSINESS.phone2Display} for the best rate.`,
+                a: `Pricing depends on the car type. Call us at ${BUSINESS.phoneDisplay} for the best rate.`,
               },
               {
                 q: `Is there a round-trip discount?`,
-                a: `Yes, we offer discounts on round-trips and multi-day trips. Call or WhatsApp us for the best rate.`,
+                a: `Yes, we offer discounts on round-trips. Call or WhatsApp us for the best rate.`,
               },
               {
                 q: `Who pays for toll and parking?`,
-                a: `Toll, parking, and state tax are to be paid by the customer (at actuals). These are not included in the fare.`,
+                a: `Toll, parking, and state tax are to be paid by the customer at actuals.`,
               },
-            ].map((faq, i) => (
+            ]).map((faq, i) => (
               <div key={i} className="card">
                 <h3 className="font-semibold text-gray-900">{faq.q}</h3>
                 <p className="mt-2 text-gray-600 text-sm">{faq.a}</p>
