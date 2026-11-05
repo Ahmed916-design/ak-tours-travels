@@ -192,7 +192,7 @@ export const WHY_US = [
 ] as const;
 
 export const SEO = {
-  siteUrl: "https://ak-tours-travels.vercel.app/",
+  siteUrl: "https://aktoursandtravels.in",
   defaultTitle: "A K Tours and Travels | Trusted Cab Service Across India",
   defaultDesc:
     "Book reliable cab service in Palanpur & Ahmedabad. Local rides, outstation, airport transfer & All India tour packages. Verified drivers, transparent pricing. Call +91 99793 57086",
